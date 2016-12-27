@@ -9,6 +9,15 @@
 
 var express = require('express');
 var router = express.Router();
+var ObjectID = mongodb.ObjectID;
+var CONTACTS_COLLECTION = "contacts";
+
+
+// Generic error handler used by all endpoints.
+function handleError(res, reason, message, code) {
+    console.log("ERROR: " + reason);
+    res.status(code || 500).json({"error": message});
+}
 
 
 

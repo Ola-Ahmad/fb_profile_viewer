@@ -7,7 +7,14 @@
  */
 var express = require('express');
 var router = express.Router();
+var CONTACTS_COLLECTION = "contacts";
 
+
+// Generic error handler used by all endpoints.
+function handleError(res, reason, message, code) {
+    console.log("ERROR: " + reason);
+    res.status(code || 500).json({"error": message});
+}
 
 router.get("/contacts", function(req, res) {
     db.collection(CONTACTS_COLLECTION).find({}).toArray(function(err, docs) {
@@ -35,5 +42,4 @@ router.post("/contacts", function(req, res) {
         }
     });
 });
-
 module.exports = router;
