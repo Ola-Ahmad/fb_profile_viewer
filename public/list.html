@@ -20,11 +20,11 @@
           <a ng-href="index.html#!/contact/{{contact._id}}">{{ contact.fullName}}</a>
         </td>
         <td>
-          <p>
+          <p ng-hide="editMode">
             <button  class="btn btn-default" ng-click="toggleEdit()">Edit</button>
-            <button  class="btn btn-default" ng-click="deleteContact(contact._id)">Delete</button>
+            <a href="index.html#!/">
+              <button  class="btn btn-default" ng-click="deleteContact(contact._id)">Delete</button></a>
           </p>
-        </td> <td>
 
         </td>
       </tr>
