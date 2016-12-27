@@ -1,28 +1,21 @@
 /**
  * Created by Hp on 27/12/2016.
  */
-var express = require('express');
-var path = require('path');
-var favicon = require('serve-favicon');
-var bodyParser = require('body-parser');
-var mongodb = require("mongodb");
-var ObjectID = mongodb.ObjectID;
-var logger = require('morgan');
-var cookieParser = require('cookie-parser');
-
-var debug = require('debug')('myproject:server');
-var http = require('http');
-
-var Facebook = require('facebook-node-sdk');
-
-
+let express = require('express');
+let path = require('path');
+let favicon = require('serve-favicon');
+let bodyParser = require('body-parser');
+let mongodb = require("mongodb");
+let ObjectID = mongodb.ObjectID;
+let logger = require('morgan');
+let cookieParser = require('cookie-parser');
+let debug = require('debug')('myproject:server');
+let http = require('http');
 // var index = require('./routes/index');
 // var contacts = require('./routes/contacts');
 // let contact = require('./routes/contact');
-var CONTACTS_COLLECTION = "contacts";
-
-var app = express();
-
+let CONTACTS_COLLECTION = "contacts";
+let app = express();
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 //app.use(logger('dev'));
@@ -30,9 +23,6 @@ app.use(bodyParser.json());
 //app.use(bodyParser.urlencoded({ extended: false }));
 // app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(Facebook.middleware({ appId: 'YOUR_APP_ID', secret: 'YOUR_APP_SECRET' }));
-
-
 // app.use('/', index);
 // app.use('/contacts', contacts);
 // app.use('/contacts/:id', contact);
@@ -55,8 +45,7 @@ app.use(Facebook.middleware({ appId: 'YOUR_APP_ID', secret: 'YOUR_APP_SECRET' })
 // });
 
 // Create a database variable outside of the database connection callback to reuse the connection pool in your app.
-var db;
-
+let db;
 // Connect to the database before starting the application server.
 mongodb.MongoClient.connect(process.env.MONGOLAB_URI, function (err, database) {
     if (err) {
@@ -66,29 +55,21 @@ mongodb.MongoClient.connect(process.env.MONGOLAB_URI, function (err, database) {
     // Save database object from the callback for reuse.
     db = database;
     console.log("Database connection ready");
-
-
-    var port = normalizePort(process.env.PORT || '3000');
+    let port = normalizePort(process.env.PORT || '3000');
     app.set('port', port);
-
     /**
      * Create HTTP server.
      */
-
-    var server = http.createServer(app);
-
+    let server = http.createServer(app);
     /**
      * Listen on provided port, on all network interfaces.
      */
-
     server.listen(port);
     server.on('error', onError);
-   server.on('listening', onListening);
-
+    server.on('listening', onListening);
     /**
      * Normalize a port into a number, string, or false.
      */
-
     function normalizePort(val) {
         var port = parseInt(val, 10);
 
@@ -96,25 +77,20 @@ mongodb.MongoClient.connect(process.env.MONGOLAB_URI, function (err, database) {
             // named pipe
             return val;
         }
-
         if (port >= 0) {
             // port number
             return port;
         }
-
         return false;
     }
-
     /**
      * Event listener for HTTP server "error" event.
      */
-
     function onError(error) {
         if (error.syscall !== 'listen') {
             throw error;
         }
-
-        var bind = typeof port === 'string'
+        let bind = typeof port === 'string'
             ? 'Pipe ' + port
             : 'Port ' + port;
 
@@ -132,37 +108,27 @@ mongodb.MongoClient.connect(process.env.MONGOLAB_URI, function (err, database) {
                 throw error;
         }
     }
-
     /**
      * Event listener for HTTP server "listening" event.
      */
-
     function onListening() {
-        var addr = server.address();
-        var bind = typeof addr === 'string'
+        let addr = server.address();
+        let bind = typeof addr === 'string'
             ? 'pipe ' + addr
             : 'port ' + addr.port;
         debug('Listening on ' + bind);
-
     }
 });
-
-// module.exports = app;
-
-
 // CONTACTS API ROUTES BELOW
-
 // Generic error handler used by all endpoints.
 function handleError(res, reason, message, code) {
     console.log("ERROR: " + reason);
     res.status(code || 500).json({"error": message});
 }
-
 /*  "/contacts"
  *    GET: finds all contacts
  *    POST: creates a new contact
  */
-
 app.get("/contacts", function(req, res) {
     db.collection(CONTACTS_COLLECTION).find({}).toArray(function(err, docs) {
         if (err) {
@@ -218,7 +184,6 @@ app.put("/contacts/:id", function(req, res) {
         }
     });
 });
-
 app.delete("/contacts/:id", function(req, res) {
     db.collection(CONTACTS_COLLECTION).deleteOne({_id: new ObjectID(req.params.id)}, function(err, result) {
         if (err) {
@@ -229,10 +194,3 @@ app.delete("/contacts/:id", function(req, res) {
     });
 });
 
-
-app.get('/fblogin', Facebook.loginRequired(), function (req, res) {
-    req.facebook.api('/me', function(err, user) {
-        res.writeHead(200, {'Content-Type': 'text/plain'});
-        res.end('Hello, ' + user.name + '!');
-    });
-});
