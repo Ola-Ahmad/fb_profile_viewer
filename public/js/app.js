@@ -115,8 +115,4 @@ angular.module("contactsApp", ['ngRoute'])
             Contacts.deleteContact(contactId);
         }
     });
-appModule.config(['$locationProvider', function($locationProvider) {
-    $locationProvider.hashPrefix('');
-}]);
-
 
