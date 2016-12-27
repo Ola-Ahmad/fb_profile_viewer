@@ -10,7 +10,7 @@ var ObjectID = mongodb.ObjectID;
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 
-var debug = require('debug')('myProject:server');
+// var debug = require('debug')('myProject:server');
 var http = require('http');
 
 
@@ -84,7 +84,7 @@ mongodb.MongoClient.connect(process.env.MONGOLAB_URI, function (err, database) {
 
     server.listen(port);
     server.on('error', onError);
-    server.on('listening', onListening);
+  //  server.on('listening', onListening);
 
     /**
      * Normalize a port into a number, string, or false.
