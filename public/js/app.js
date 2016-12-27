@@ -1,6 +1,6 @@
 
 angular.module("contactsApp", ['ngRoute'])
-    .config(function($routeProvider) {
+    .config(function($routeProvider,$locationProvider) {
         $routeProvider
             .when("/", {
                 templateUrl: "list.html",
@@ -22,8 +22,12 @@ angular.module("contactsApp", ['ngRoute'])
             .otherwise({
                 redirectTo: "/"
             })
+        // use the HTML5 History API
+        $locationProvider.html5Mode(true);
+
     })
-    .service("Contacts", function($http) {
+
+.service("Contacts", function($http) {
         this.getContacts = function() {
             return $http.get("/contacts").
                 then(function(response) {
