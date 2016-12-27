@@ -1,3 +1,7 @@
+appModule.config(['$locationProvider', function($locationProvider) {
+    $locationProvider.hashPrefix('');
+}]);
+
 angular.module("contactsApp", ['ngRoute'])
     .config(function($routeProvider) {
         $routeProvider
@@ -114,3 +118,5 @@ angular.module("contactsApp", ['ngRoute'])
             Contacts.deleteContact(contactId);
         }
     });
+
+
