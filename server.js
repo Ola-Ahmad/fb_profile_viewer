@@ -44,9 +44,6 @@ app.use(express.static(path.join(__dirname,'public')));
 //     alert('error');
 // });
 
-app.use(function(req, res) {
-    res.sendfile(__dirname + '/public/index.html');
-})
 // Create a database variable outside of the database connection callback to reuse the connection pool in your app.
 let db;
 // Connect to the database before starting the application server.
