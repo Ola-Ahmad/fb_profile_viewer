@@ -119,8 +119,28 @@ mongodb.MongoClient.connect(process.env.MONGOLAB_URI, function (err, database) {
         debug('Listening on ' + bind);
     }
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+app.use(function(req, res) {
+    res.sendfile(__dirname + '/public/index.html');
+})
+
+
+
 // CONTACTS API ROUTES BELOW
 // Generic error handler used by all endpoints.
+
 function handleError(res, reason, message, code) {
     console.log("ERROR: " + reason);
     res.status(code || 500).json({"error": message});
