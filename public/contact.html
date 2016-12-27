@@ -17,7 +17,7 @@
     <p ng-if="contact.email">email: <a ng-href="mailto:{{ contact.email }}" target="_blank">{{ contact.email }}</a></p>
     <p ng-if="contact.mobile">phone (m): {{ contact.mobile }} </p>
     <p ng-if="contact.address"> address: {{ contact.address }} </p>
-    <p ng-if="contact.facebookURL"> Facebook: <a ng-href="{{ contact.facebookURL }}" target="_blank">@{{ contact.facebookURL }}</a></p>
+    <p ng-if="contact.facebookURL"> Facebook: <a ng-href="{{ contact.facebookURL }}" target="_blank">{{ contact.facebookURL }}</a></p>
 
     <p>
       <button  class="btn btn-default" ng-click="toggleEdit()">Edit</button>
