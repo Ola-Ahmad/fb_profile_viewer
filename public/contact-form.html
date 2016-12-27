@@ -32,9 +32,10 @@
           <label for="adrr">Address</label>
           <input id="adrr" class="form-control" type="text" ng-model="contact.address">
         </div>
+        <button  type="button" class="btn btn-default" ng-click="saveContact(contact)">Save</button>
+        <button  type="button" class="btn btn-default" ng-click="back()">Back</button>
+
       </form>
-      <button  class="btn btn-default" ng-click="saveContact(contact)">Save</button>
-      <button  class="btn btn-default" ng-click="back()">Back</button>
 
     </div>
   </div>
