@@ -13,6 +13,7 @@ var cookieParser = require('cookie-parser');
 var debug = require('debug')('myproject:server');
 var http = require('http');
 
+var Facebook = require('facebook-node-sdk');
 
 
 // var index = require('./routes/index');
@@ -27,8 +28,10 @@ var app = express();
 //app.use(logger('dev'));
 app.use(bodyParser.json());
 //app.use(bodyParser.urlencoded({ extended: false }));
-//app.use(cookieParser());
+// app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(Facebook.middleware({ appId: 'YOUR_APP_ID', secret: 'YOUR_APP_SECRET' }));
+
 
 // app.use('/', index);
 // app.use('/contacts', contacts);
@@ -140,16 +143,11 @@ mongodb.MongoClient.connect(process.env.MONGOLAB_URI, function (err, database) {
             ? 'pipe ' + addr
             : 'port ' + addr.port;
         debug('Listening on ' + bind);
+
     }
 });
 
-
-    // module.exports = app;
-
-
-
-
-
+// module.exports = app;
 
 
 // CONTACTS API ROUTES BELOW
@@ -228,5 +226,13 @@ app.delete("/contacts/:id", function(req, res) {
         } else {
             res.status(204).end();
         }
+    });
+});
+
+
+app.get('/fblogin', Facebook.loginRequired(), function (req, res) {
+    req.facebook.api('/me', function(err, user) {
+        res.writeHead(200, {'Content-Type': 'text/plain'});
+        res.end('Hello, ' + user.name + '!');
     });
 });
