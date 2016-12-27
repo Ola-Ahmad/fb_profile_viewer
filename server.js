@@ -140,13 +140,12 @@ app.get("/contacts", function(req, res) {
 });
 
 app.post("/contacts", function(req, res) {
-    var newContact = req.body;
+    let newContact = req.body;
     newContact.createDate = new Date();
 
-    if (!(req.body.firstName || req.body.lastName)) {
+    if (!(req.body.fullName)) {
         handleError(res, "Invalid user input", "Must provide a first or last name.", 400);
     }
-
     db.collection(CONTACTS_COLLECTION).insertOne(newContact, function(err, doc) {
         if (err) {
             handleError(res, err.message, "Failed to create new contact.");
