@@ -25,8 +25,11 @@ angular.module("contactsApp", ['ngRoute'])
             })
         // use the HTML5 History API
         $locationProvider
-            .html5Mode(true)
+            .html5Mode(false)
             .hashPrefix('!');
+
+        // .html5Mode(true)
+            // .hashPrefix('!');
 
 
     })
