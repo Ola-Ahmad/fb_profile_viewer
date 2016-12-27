@@ -18,7 +18,7 @@ let CONTACTS_COLLECTION = "contacts";
 let app = express();
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
-//app.use(logger('dev'));
+app.use(logger('dev'));
 app.use(bodyParser.json());
 //app.use(bodyParser.urlencoded({ extended: false }));
 // app.use(cookieParser());
@@ -55,13 +55,12 @@ mongodb.MongoClient.connect(process.env.MONGOLAB_URI, function (err, database) {
     // Save database object from the callback for reuse.
     db = database;
     console.log("Database connection ready");
-
 });
 
-
-// CONTACTS API ROUTES BELOW
+/********
+ * API ROUTES
+ ********/
 // Generic error handler used by all endpoints.
-
 function handleError(res, reason, message, code) {
     console.log("ERROR: " + reason);
     res.status(code || 500).json({"error": message});
@@ -133,6 +132,10 @@ app.delete("/contacts/:id", function(req, res) {
         }
     });
 });
+
+/**************
+ * Start Server
+ **************/
 
 let port = normalizePort(process.env.PORT || '3000');
 app.set('port', port);
