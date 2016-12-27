@@ -7,7 +7,7 @@
   <div class="col-md-3">
   </div>
   <div class="col-md-2">
-    <a class="btn btn-default" href="#/new/contact">New</a>
+    <a class="btn btn-default" href="index.html#!/new/contact">New</a>
   </div>
   <div class="col-md-1">
   </div>
@@ -15,9 +15,9 @@
 <div class="container">
   <table class="table table-hover">
     <tbody>
-      <tr ng-repeat="contact in contacts | orderBy:'lastName'" style="cursor:pointer">
+      <tr ng-repeat="contact in contacts | orderBy:'fullName'" style="cursor:pointer">
         <td>
-          <a ng-href="/contact/{{contact._id}}">{{ contact.fullName}}</a>
+          <a ng-href="index.html#!/contact/{{contact._id}}">{{ contact.fullName}}</a>
         </td>
       </tr>
     </tbody>
