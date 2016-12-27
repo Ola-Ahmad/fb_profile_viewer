@@ -10,7 +10,7 @@ var ObjectID = mongodb.ObjectID;
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 
-// var debug = require('debug')('myProject:server');
+var debug = require('debug')('myproject:server');
 var http = require('http');
 
 
@@ -65,8 +65,6 @@ mongodb.MongoClient.connect(process.env.MONGOLAB_URI, function (err, database) {
     // Save database object from the callback for reuse.
     db = database;
     console.log("Database connection ready");
-
-
 
 
     var port = normalizePort(process.env.PORT || '3000');
@@ -149,6 +147,11 @@ mongodb.MongoClient.connect(process.env.MONGOLAB_URI, function (err, database) {
 
 
     // module.exports = app;
+
+
+
+
+
 
 
 // CONTACTS API ROUTES BELOW
