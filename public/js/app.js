@@ -1,5 +1,6 @@
 
 angular.module("contactsApp", ['ngRoute'])
+
     .config(function($routeProvider,$locationProvider) {
         $routeProvider
             .when("/", {
@@ -26,8 +27,7 @@ angular.module("contactsApp", ['ngRoute'])
         $locationProvider.html5Mode(true);
 
     })
-
-.service("Contacts", function($http) {
+    .service("Contacts", function($http) {
         this.getContacts = function() {
             return $http.get("/contacts").
                 then(function(response) {
