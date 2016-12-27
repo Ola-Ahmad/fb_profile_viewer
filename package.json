@@ -4,7 +4,9 @@
   "description": "my mean project",
   "main": "app.js",
   "scripts": {
-    "start": "node ./bin/www"
+    "test": "echo \"Error: no test specified\" && exit 1",
+
+    "start": "node server.js"
 
   },
   "keywords": [
