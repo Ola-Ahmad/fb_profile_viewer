@@ -10,10 +10,8 @@
       <!--<div class="form-horizontal">-->
         <div class="form-group">
           <label for="fname">Full Name</label>
-          <input id="fname" class="form-control" type="text" ng-model="contact.fullName"  ng-required="true" >
-          <p ng-show="register_form.fname.$invalid && !register_form.fname.$pristine" class="help-block">You name is required.</p>
-
-
+          <input id="fname" class="form-control" type="text" ng-model="contact.fullName" required ng-required="true" >
+          <!--<p ng-show="register_form.fname.$invalid && !register_form.fname.$pristine" class="help-block">You name is required.</p>-->
         </div>
         <div class="form-group">
           <label for="fburl">Facebook profile url </label>
@@ -37,7 +35,7 @@
         </div>
 
         <button  type="submit" class="btn btn-default" >Save</button>
-        <button  type="button" class="btn btn-default" ng-click="saveContact(contact)">Save</button>
+        <!--<button  type="button" class="btn btn-default" ng-click="saveContact(contact)">Save</button>-->
         <button  type="button" class="btn btn-default" ng-click="back()">Back</button>
 
       <!--</div>-->
