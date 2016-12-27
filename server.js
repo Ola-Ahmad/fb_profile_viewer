@@ -33,8 +33,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 // app.use('/', index);
 // app.use('/contacts', contacts);
 // app.use('/contacts/:id', contact);
-
-
 // catch 404 and forward to error handler
 // app.use(function(req, res, next) {
 //     var err = new Error('Not Found');
@@ -82,7 +80,7 @@ mongodb.MongoClient.connect(process.env.MONGOLAB_URI, function (err, database) {
 
     server.listen(port);
     server.on('error', onError);
-  //  server.on('listening', onListening);
+   server.on('listening', onListening);
 
     /**
      * Normalize a port into a number, string, or false.
