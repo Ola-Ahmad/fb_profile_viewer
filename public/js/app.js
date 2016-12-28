@@ -93,8 +93,8 @@ angular.module("contactsApp", ['ngRoute'])
         })
 
 .service('facebookService', function($q) {
-        return {
-            getResponse: function() {
+
+            this.getResponse= function() {
                 // let deferred = $q.defer();
                 FB.api('/me',
                     {fields: "id,name,birthday,gender,work,picture,education"
@@ -113,10 +113,8 @@ angular.module("contactsApp", ['ngRoute'])
                 // return deferred.promise;
                 // return response;
             }
-        }
-    });
 
-
+    })
 .service("Contacts", function($http) {
         this.getContacts = function() {
             return $http.get("/contacts").
@@ -221,6 +219,6 @@ angular.module("contactsApp", ['ngRoute'])
                 );
 
 
-    })
+    });
 
 
