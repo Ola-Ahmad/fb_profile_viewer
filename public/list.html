@@ -25,7 +25,9 @@
 <div class="container">
   <table id="UserList"  cellspacing="0" width="100%" class="table table-hover">
     <tbody>
-      <tr ng-repeat="contact in contacts | orderBy:'fullName'" style="cursor:pointer">
+    <thead>
+
+    <tr ng-repeat="contact in contacts | orderBy:'fullName'" style="cursor:pointer">
         <td>
           <a ng-href="index.html#!/contact/{{contact._id}}">{{ contact.fullName}}</a>
         </td>
@@ -43,6 +45,7 @@
           <div id="status">
           </div></td>
       </tr>
+  </thead>
     </tbody>
   </table>
 
