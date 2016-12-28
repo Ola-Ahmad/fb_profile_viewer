@@ -1,16 +1,24 @@
 
 angular.module("contactsApp", ['ngRoute'])
-// New SDK (v2.x)
-js.src = "//connect.facebook.net/en_US/sdk.js";
-$window.fbAsyncInit = function() {
-    FB.init({
-        appId: '899782363404518',
-        status: true,
-        cookie: true,
-        xfbml: true,
-        version: 'v2.8'
-    });
-}
+// // New SDK (v2.x)
+// js.src = "//connect.facebook.net/en_US/sdk.js";
+//
+// (function(d, s, id) {
+//     var js, fjs = d.getElementsByTagName(s)[0];
+//     if (d.getElementById(id)) return;
+//     js = d.createElement(s); js.id = id;
+//     js.src = "//connect.facebook.net/en_US/sdk.js";
+//     fjs.parentNode.insertBefore(js, fjs);
+// }(document, 'script', 'facebook-jssdk'));
+// $window.fbAsyncInit = function() {
+//     FB.init({
+//         appId: '899782363404518',
+//         status: true,
+//         cookie: true,
+//         xfbml: true,
+//         version: 'v2.8'
+//     });
+// }
 
 .config(function($routeProvider,$locationProvider) {
         $routeProvider
