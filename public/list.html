@@ -62,7 +62,7 @@
                 },
                 columns: [{
                     template:
-                        "<a ng-href='index.html\\#!/contact/'+#:_id#+'''> #: fullName # </a>",
+                        "<a ng-href='index.html\\#!/contact/#: _id #'> #: fullName # </a>",
 
                     field: "fullName",
                     title: "Contact Name",
@@ -70,7 +70,7 @@
 
                 }, {
                     template:"<p> Facebook: "+
-                    "<a ng-href='\\'+#:facebookURL\\#+''' target='_blank'> #:facebookURL #</a></p>",
+                    "<a ng-href='#: facebookURL #>' target='_blank'> #:facebookURL #</a></p>",
                     field: "facebookURL",
                     title: "Facebook profile URL"
                 }, {
