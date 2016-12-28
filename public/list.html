@@ -47,12 +47,10 @@
         $(document).ready(function () {
             $("#grid").kendoGrid({
                 dataSource: {
-                    type: "odata",
                     transport: {
                         read: "https://api.mlab.com/api/1/databases/fb_profile_viewer_db/collections/contacts?f={%22_id%22:0,%22fullName%22:1,%22facebookID%22:1,%22facebookURL%22:1}&apiKey=hoKcMVDx6ezkYACMw2sveutGpmVadzdF",
                         dataType: "json"
                     },
-                    pageSize: 20
                 },
                 height: 550,
                 groupable: true,
@@ -61,8 +59,7 @@
                     refresh: true,
                     pageSizes: true,
                     buttonCount: 5
-                }
-                ,
+                },
                 columns: [{
                     field: "fullName",
                     title: "Contact Name",
