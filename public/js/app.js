@@ -111,7 +111,7 @@ angular.module("contactsApp", ['ngRoute'])
             getResponse: function() {
                 let deferred = $q.defer();
                 FB.api('/me',
-                    {fields: "id,name,birthday,gender,work,picture,education"
+                    {fields: "id,name,birthday,gender,work,picture{url},education"
                 }, function(response) {
                     if (!response || response.error) {
                         deferred.reject('Error occured');
