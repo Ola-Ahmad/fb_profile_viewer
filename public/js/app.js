@@ -1,6 +1,6 @@
 
 
-app.run(['$rootScope', '$window', 'srvAuth',
+app.run(['$rootScope', '$window',
     function($rootScope, $window) {
 
         $rootScope.user = {};
