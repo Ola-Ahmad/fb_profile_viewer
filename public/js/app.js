@@ -38,7 +38,7 @@ angular.module("contactsApp", ['ngRoute'])
 
     })
     .run(function($rootScope, $window) {
-            $rootScope.user = {};
+            // $rootScope.user = {};
             $window.fbAsyncInit = function() {
                 // Executed when the SDK is loaded
                 FB.init({
@@ -49,14 +49,6 @@ angular.module("contactsApp", ['ngRoute'])
                      */
 
                     appId: '899782363404518',
-
-                    /*
-                     Adding a Channel File improves the performance
-                     of the javascript SDK, by addressing issues
-                     with cross-domain communication in certain browsers.
-                     */
-
-                    channelUrl: 'app/channel.html',
 
                     /*
                      Set if you want to check the authentication status

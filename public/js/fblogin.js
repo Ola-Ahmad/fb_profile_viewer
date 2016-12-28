@@ -1,4 +1,11 @@
-
+// This function is called when someone finishes with the Login
+// Button.  See the onlogin handler attached to it in the sample
+// code below.
+function checkLoginState() {
+    FB.getLoginStatus(function(response) {
+        statusChangeCallback(response);
+    });
+}
 // This is called with the results from from FB.getLoginStatus().
 function statusChangeCallback(response) {
     console.log('statusChangeCallback');
@@ -10,7 +17,7 @@ function statusChangeCallback(response) {
     if (response.status === 'connected') {
         // Logged into your app and Facebook.
         // basicAPIRequest();
-        window.location='/login';
+        window.location='index.html#!/login';
 
     } else if (response.status === 'not_authorized') {
         // The person is logged into Facebook, but not your app.
@@ -24,18 +31,10 @@ function statusChangeCallback(response) {
     }
 }
 
-// This function is called when someone finishes with the Login
-// Button.  See the onlogin handler attached to it in the sample
-// code below.
-function checkLoginState() {
-    FB.getLoginStatus(function(response) {
-        statusChangeCallback(response);
-    });
-}
 
 // Here we run a very simple test of the Graph API after login is
 // successful.  See statusChangeCallback() for when this call is made.
-function  basicAPIRequest() {
+// function  basicAPIRequest() {
     // console.log('Welcome!  Fetching your information.... ');
     // FB.api('/me',
     //     {fields: "id,name,birthday,gender,work,picture,education"},
@@ -46,8 +45,8 @@ function  basicAPIRequest() {
     //
     //     // document.getElementById('status').innerHTML =
     //     //     'Thanks for logging in, ' + response.name + '!';
-        window.location='index.html#!/login';
+    //     window.location='index.html#!/login';
     // });
 
 
-}
+// }
