@@ -61,13 +61,17 @@
             $("#grid").kendoGrid({
                 dataSource: {
                     transport: {
-                        read: "https://api.mlab.com/api/1/databases/fb_profile_viewer_db/collections/contacts?f={%22_id%22:0,%22fullName%22:1,%22facebookID%22:1,%22facebookURL%22:1}&apiKey=hoKcMVDx6ezkYACMw2sveutGpmVadzdF",
-                        dataType: "json"
-                    },
-                    create: {
-                        url:"https://fb-profile-viewer.herokuapp.com/index.html#!/new/contact" ,
+                        read: {
+                            "https://api.mlab.com/api/1/databases/fb_profile_viewer_db/collections/contacts?f={%22_id%22:0,%22fullName%22:1,%22facebookID%22:1,%22facebookURL%22:1}&apiKey=hoKcMVDx6ezkYACMw2sveutGpmVadzdF",
+                            dataType: "json"
+                        },
+
+                        create: {
+                           // url:"" ,
 //                        dataType: "jsonp"
+                        }
                     },
+
                     batch: true,
 
                     pageSize: 6
