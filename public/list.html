@@ -60,9 +60,12 @@
                     pageSizes: true,
                     buttonCount: 5
                 },
-                columns: [{
+                columns: [
+                    {
+                        field: "_id",
+                    },{
                     template:
-                        "<a href='index.html\\#!/contact/#: _id #' ng-href='index.html\\#!/contact/#: _id #'> #: $oid </a>",
+                        "<a href='index.html\\#!/contact/#: _id #' ng-href='index.html\\#!/contact/#: _id #'> #: _id </a>",
                     field: "fullName",
                     title: "Contact Name",
                     width: 240
