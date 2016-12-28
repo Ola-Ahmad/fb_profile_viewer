@@ -1,4 +1,5 @@
 
+
 angular.module("contactsApp", ['ngRoute'])
 
     .config(function($routeProvider,$locationProvider) {
@@ -19,6 +20,10 @@ angular.module("contactsApp", ['ngRoute'])
             .when("/contact/:contactId", {
                 controller: "EditContactController",
                 templateUrl: "contact.html"
+            })
+            .when("/login", {
+                controller: "logInwithFcebookController",
+                templateUrl: "fbprofile.html"
             })
             .otherwise({
                 redirectTo: "/"
@@ -84,17 +89,17 @@ angular.module("contactsApp", ['ngRoute'])
     .controller("ListController", function(contacts, $scope) {
         $scope.contacts = contacts.data;
     })
-    .controller("NewContactController", function($scope, $location, Contacts) {
-        $scope.back = function() {
-            $location.path("/");
-        }
+    .controller("NewContactController",function($scope, $location, Contacts) {
+            $scope.back = function() {
+                $location.path("/");
+            }
 
-        $scope.saveContact = function(contact) {
-            Contacts.createContact(contact).then(function(doc) {
-                var contactUrl = "/contact/" + doc.data._id;
-                $location.path(contactUrl);
-            }, function(response) {
-                alert(response);
+            $scope.saveContact = function(contact) {
+                Contacts.createContact(contact).then(function(doc) {
+                    var contactUrl = "/contact/" + doc.data._id;
+                    $location.path(contactUrl);
+                }, function(response) {
+                    alert(response);
             });
         }
     })
@@ -124,5 +129,35 @@ angular.module("contactsApp", ['ngRoute'])
         $scope.deleteContact = function(contactId) {
             Contacts.deleteContact(contactId);
         }
-    });
+    })
+    .controller("logInwithFacebookController",function ($scope) {
+            facebookService.getResponse()
+                .then(function(response) {
+                        $scope.resonse = response;
+                       // alert(response);
+                    }
+                );
+
+
+    })
+
+
+.factory('facebookService', function($q) {
+    return {
+        getResponse: function() {
+            let deferred = $q.defer();
+            FB.api('/me',
+                {fields: "id,name,birthday,gender,work,picture,education"
+            }, function(response) {
+                if (!response || response.error) {
+                    deferred.reject('Error occured');
+                } else {
+                    deferred.resolve(response);
+                    console.log('Successful login for: ' + response.name);
+                }
+            });
+            return deferred.promise;
+        }
+    }
+});
 

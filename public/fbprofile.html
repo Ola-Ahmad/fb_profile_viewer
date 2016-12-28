@@ -1,0 +1,25 @@
+<div class = "row">
+    <div class="col-md-6">
+        <h2>
+            {{response.name }}
+        </h2>
+    </div>
+    <div class="col-md-3">
+    </div>
+    <div class="col-md-2">
+
+    </div>
+    <div class="col-md-1">
+    </div>
+</div>
+<div  class="container">
+    <div>
+        <p ng-if="response.name">name:{{ response.name }}</p>
+        <p ng-if="response.birthday">birthday : {{ response.mobile }} </p>
+        <p ng-if="response.gender"> gender: {{ response.gender }} </p>
+        <img ng-if="response.profile" src="{{response.profile}}">
+        <p>
+            <a class="btn btn-default" href=index.html#!/">Back</a>
+        </p>
+    </div>
+</div>

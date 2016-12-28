@@ -60,6 +60,14 @@ mongodb.MongoClient.connect(process.env.MONGOLAB_URI, function (err, database) {
 /********
  * API ROUTES
  ********/
+
+
+
+app.get('/login',function (req, res) {
+
+});
+
+
 // Generic error handler used by all endpoints.
 function handleError(res, reason, message, code) {
     console.log("ERROR: " + reason);
