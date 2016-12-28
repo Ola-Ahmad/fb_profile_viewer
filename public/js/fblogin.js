@@ -1,26 +1,4 @@
 
-jQuery(document).ready(function(){
-    jQuery("#load").click(function(e){
-        if(typeof(FB) == "undefined") {
-            alert("Facebook SDK not yet loaded please wait.")
-        }
-        FB.getLoginStatus(function(response) {
-            if (response.status === 'connected') {
-                console.log('Logged in.');
-                basicAPIRequest();
-
-            }
-            else {
-                FB.login();
-            }
-        });
-    });
-
-});
-
-
-
-
 // This is called with the results from from FB.getLoginStatus().
 function statusChangeCallback(response) {
     console.log('statusChangeCallback');
@@ -58,7 +36,7 @@ function checkLoginState() {
 function  basicAPIRequest() {
     console.log('Welcome!  Fetching your information.... ');
     FB.api('/me',
-        {fields: "id,about,age_range,picture,bio,birthday,context,email,first_name,gender,hometown,link,location,middle_name,name,timezone,website,work"},
+        {fields: "id,name,education,birthday,gender,work"},
         function(response) {
         console.log('Successful login for: ' + response.name);
         document.getElementById('status').innerHTML =
