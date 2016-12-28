@@ -1,7 +1,17 @@
+// New SDK (v2.x)
+js.src = "//connect.facebook.net/en_US/sdk.js";
 
+$window.fbAsyncInit = function() {
+    FB.init({
+        appId: '899782363404518',
+        status: true,
+        cookie: true,
+        xfbml: true,
+        version: 'v2.8'
+    });
+};
 
 angular.module("contactsApp", ['ngRoute'])
-
     .config(function($routeProvider,$locationProvider) {
         $routeProvider
             .when("/", {
@@ -133,7 +143,7 @@ angular.module("contactsApp", ['ngRoute'])
     .controller("loginWithFacebookController",function ($scope,facebookService) {
             facebookService.getResponse()
                 .then(function(response) {
-                        $scope.resonse = response;
+                        $scope.response = response;
                        // alert(response);
                     },
                     function(response) {
@@ -145,21 +155,26 @@ angular.module("contactsApp", ['ngRoute'])
     })
 
 
-.factory('facebookService', function($q) {
+.service('facebookService', function($q) {
     return {
         getResponse: function() {
-            let deferred = $q.defer();
+            // let deferred = $q.defer();
             FB.api('/me',
                 {fields: "id,name,birthday,gender,work,picture,education"
             }, function(response) {
                 if (!response || response.error) {
-                    deferred.reject('Error occured');
+                    // deferred.reject('Error occured');
+                    console.log('errrorr');
                 } else {
-                    deferred.resolve(response);
+                    // deferred.resolve(response);
+
                     console.log('Successful login for: ' + response.name);
+                    return response;
+
                 }
             });
-            return deferred.promise;
+            // return deferred.promise;
+            // return response;
         }
     }
 });
