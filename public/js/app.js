@@ -106,10 +106,10 @@ angular.module("contactsApp", ['ngRoute'])
 //             }
 
 //     })
-    .factory('facebookService', function($q) {
+.factory('facebookService', function($q) {
         return {
             getResponse: function() {
-                var deferred = $q.defer();
+                let deferred = $q.defer();
                 FB.api('/me',
                     {fields: "id,name,birthday,gender,work,picture,education"
                 }, function(response) {
@@ -217,8 +217,6 @@ angular.module("contactsApp", ['ngRoute'])
         }
     })
     .controller("loginWithFacebookController",function ($scope,facebookService) {
-
-
             facebookService.getResponse()
                 .then(function(response) {
                     $scope.response = response;

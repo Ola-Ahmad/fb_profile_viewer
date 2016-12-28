@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="061c8e11-9464-444c-9663-0ff5007b635e" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/fbprofile.html" afterPath="$PROJECT_DIR$/public/fbprofile.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app.js" afterPath="$PROJECT_DIR$/public/js/app.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -37,36 +38,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="fbprofile.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="fbprofile.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/fbprofile.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="25" column="0" lean-forward="true" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+            <state relative-caret-position="136">
+              <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="list.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/list.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="34" column="53" lean-forward="false" selection-start-line="34" selection-start-column="38" selection-end-line="34" selection-end-column="53" />
-              <folding>
-                <element signature="n#style#0;n#tr#0;n#thead#0;n#table#0;n#div#1;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="fblogin.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/js/fblogin.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="1" lean-forward="false" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -91,16 +68,18 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="app.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/js/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="245">
-              <caret line="219" column="0" lean-forward="true" selection-start-line="219" selection-start-column="0" selection-end-line="219" selection-end-column="0" />
+            <state relative-caret-position="128">
+              <caret line="113" column="66" lean-forward="false" selection-start-line="113" selection-start-column="59" selection-end-line="113" selection-end-column="66" />
               <folding>
                 <element signature="e#144#420#0" expanded="false" />
                 <element signature="e#456#572#0" expanded="false" />
-                <element signature="e#6014#6450#0" expanded="false" />
-                <element signature="e#6534#7285#0" expanded="false" />
+                <element signature="e#4067#5820#0" expanded="false" />
+                <element signature="e#5476#5814#0" expanded="false" />
+                <element signature="e#6010#6446#0" expanded="false" />
+                <element signature="e#6530#7281#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -136,11 +115,11 @@
         <option value="$PROJECT_DIR$/public/login.html" />
         <option value="$PROJECT_DIR$/public/contact.html" />
         <option value="$PROJECT_DIR$/server.js" />
-        <option value="$PROJECT_DIR$/public/fbprofile.html" />
         <option value="$PROJECT_DIR$/public/list.html" />
         <option value="$PROJECT_DIR$/public/index.html" />
         <option value="$PROJECT_DIR$/public/js/fblogin.js" />
         <option value="$PROJECT_DIR$/public/js/app.js" />
+        <option value="$PROJECT_DIR$/public/fbprofile.html" />
       </list>
     </option>
   </component>
@@ -301,12 +280,12 @@
       <option name="presentableId" value="Default" />
       <updated>1482863163485</updated>
       <workItem from="1482863168189" duration="26295000" />
-      <workItem from="1482919157807" duration="35198000" />
+      <workItem from="1482919157807" duration="35893000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="61493000" />
+    <option name="totallyTimeSpent" value="62188000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -371,8 +350,10 @@
           <folding>
             <element signature="e#144#420#0" expanded="false" />
             <element signature="e#456#572#0" expanded="false" />
-            <element signature="e#6014#6450#0" expanded="false" />
-            <element signature="e#6534#7285#0" expanded="false" />
+            <element signature="e#4067#5820#0" expanded="false" />
+            <element signature="e#5476#5814#0" expanded="false" />
+            <element signature="e#6010#6446#0" expanded="false" />
+            <element signature="e#6530#7281#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -535,18 +516,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/fbprofile.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="25" column="0" lean-forward="true" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/contact.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="510">
           <caret line="30" column="33" lean-forward="true" selection-start-line="30" selection-start-column="33" selection-end-line="30" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="467">
+          <caret line="71" column="19" lean-forward="true" selection-start-line="71" selection-start-column="19" selection-end-line="71" selection-end-column="19" />
           <folding />
         </state>
       </provider>
@@ -571,24 +552,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="467">
-          <caret line="71" column="19" lean-forward="true" selection-start-line="71" selection-start-column="19" selection-end-line="71" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/js/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="245">
-          <caret line="219" column="0" lean-forward="true" selection-start-line="219" selection-start-column="0" selection-end-line="219" selection-end-column="0" />
+        <state relative-caret-position="128">
+          <caret line="113" column="66" lean-forward="false" selection-start-line="113" selection-start-column="59" selection-end-line="113" selection-end-column="66" />
           <folding>
             <element signature="e#144#420#0" expanded="false" />
             <element signature="e#456#572#0" expanded="false" />
-            <element signature="e#6014#6450#0" expanded="false" />
-            <element signature="e#6534#7285#0" expanded="false" />
+            <element signature="e#4067#5820#0" expanded="false" />
+            <element signature="e#5476#5814#0" expanded="false" />
+            <element signature="e#6010#6446#0" expanded="false" />
+            <element signature="e#6530#7281#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/fbprofile.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
