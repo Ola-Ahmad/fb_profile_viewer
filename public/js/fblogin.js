@@ -36,14 +36,14 @@ function checkLoginState() {
 function  basicAPIRequest() {
     console.log('Welcome!  Fetching your information.... ');
     FB.api('/me',
-        {fields: "id,name,education,birthday,gender,work,picture"},
+        {fields: "id,name,,birthday,gender,work,picture,education"},
         function(response) {
             console.log('Successful login for: ' + response.name);
 
             console.log(response);
 
-        document.getElementById('status').innerHTML =
-            'Thanks for logging in, ' + response.name + '!';
+        // document.getElementById('status').innerHTML =
+        //     'Thanks for logging in, ' + response.name + '!';
         // window.location='../login.html';
     });
 
