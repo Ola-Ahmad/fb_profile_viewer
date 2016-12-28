@@ -1,3 +1,26 @@
+
+jQuery(document).ready(function(){
+    jQuery("#load").click(function(e){
+        if(typeof(FB) == "undefined") {
+            alert("Facebook SDK not yet loaded please wait.")
+        }
+        FB.getLoginStatus(function(response) {
+            if (response.status === 'connected') {
+                console.log('Logged in.');
+                basicAPIRequest();
+
+            }
+            else {
+                FB.login();
+            }
+        });
+    });
+
+});
+
+
+
+
 // This is called with the results from from FB.getLoginStatus().
 function statusChangeCallback(response) {
     console.log('statusChangeCallback');
@@ -8,7 +31,7 @@ function statusChangeCallback(response) {
     // for FB.getLoginStatus().
     if (response.status === 'connected') {
         // Logged into your app and Facebook.
-        testAPI();
+        basicAPIRequest();
     } else if (response.status === 'not_authorized') {
         // The person is logged into Facebook, but not your app.
         document.getElementById('status').innerHTML = 'Please log ' +
@@ -32,10 +55,11 @@ function checkLoginState() {
 
 // Here we run a very simple test of the Graph API after login is
 // successful.  See statusChangeCallback() for when this call is made.
-function testAPI() {
+function  basicAPIRequest() {
     console.log('Welcome!  Fetching your information.... ');
     FB.api('/me',
-        {fields:"birthday,email,education,work,picture,gender"}, function(response) {
+        {fields: "id,about,age_range,picture,bio,birthday,context,email,first_name,gender,hometown,link,location,middle_name,name,timezone,website,work"},
+        function(response) {
         console.log('Successful login for: ' + response.name);
         document.getElementById('status').innerHTML =
             'Thanks for logging in, ' + response.name + '!';
