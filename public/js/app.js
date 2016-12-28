@@ -1,7 +1,7 @@
 
 
 app.run(['$rootScope', '$window', 'srvAuth',
-    function($rootScope, $window, ) {
+    function($rootScope, $window) {
 
         $rootScope.user = {};
         $window.fbAsyncInit = function() {
