@@ -5,7 +5,7 @@
         </h2>
     </div>
     <div class="col-md-3">
-        <img ng-if="response.profile" src="{{response.profile}}">
+        <img ng-if="response.profile.data.url" src="{{response.response.profile.data.url}}">
 
     </div>
     <div class="col-md-2">
@@ -19,9 +19,10 @@
         <p ng-if="response.name">name:{{ response.name }}</p>
         <p ng-if="response.birthday">birthday : {{ response.birthday }} </p>
         <p ng-if="response.gender"> gender: {{ response.gender }} </p>
-        <p ng-if="response.work"> gender: {{ response.work }} </p>
-        <p ng-if="response.education"> gender: {{ response.education }} </p>
-        <p ng-if="response.picture"> gender: {{ response.picture }} </p>
+        <p ng-if="response.work"> work: {{ response.work }} </p>
+        <p ng-if="response.education"> education: {{ response.education }} </p>
+        <p ng-if="response.profile.data.url"> profile pic: {{response.profile.data.url }} </p>
+        <p ng-if="response.profile.url"> profile pic: {{response.profile.url }} </p>
 
         <p>
             <a class="btn btn-default" href=index.html#!/">Back</a>
