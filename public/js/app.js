@@ -1,6 +1,7 @@
+
+angular.module("contactsApp", ['ngRoute'])
 // New SDK (v2.x)
 js.src = "//connect.facebook.net/en_US/sdk.js";
-
 $window.fbAsyncInit = function() {
     FB.init({
         appId: '899782363404518',
@@ -9,10 +10,9 @@ $window.fbAsyncInit = function() {
         xfbml: true,
         version: 'v2.8'
     });
-};
+}
 
-angular.module("contactsApp", ['ngRoute'])
-    .config(function($routeProvider,$locationProvider) {
+.config(function($routeProvider,$locationProvider) {
         $routeProvider
             .when("/", {
                 templateUrl: "list.html",
