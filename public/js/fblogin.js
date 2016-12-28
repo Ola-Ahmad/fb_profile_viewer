@@ -36,7 +36,7 @@ function checkLoginState() {
 function  basicAPIRequest() {
     console.log('Welcome!  Fetching your information.... ');
     FB.api('/me',
-        {fields: "id,name,,birthday,gender,work,picture,education"},
+        {fields: "id,name,birthday,gender,work,picture,education"},
         function(response) {
             console.log('Successful login for: ' + response.name);
 
