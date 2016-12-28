@@ -22,7 +22,7 @@ angular.module("contactsApp", ['ngRoute'])
                 templateUrl: "contact.html"
             })
             .when("/login", {
-                controller: "logInwithFcebookController",
+                controller: "loginWithFacebookController",
                 templateUrl: "fbprofile.html"
             })
             .otherwise({
@@ -130,11 +130,14 @@ angular.module("contactsApp", ['ngRoute'])
             Contacts.deleteContact(contactId);
         }
     })
-    .controller("logInwithFacebookController",function ($scope) {
+    .controller("loginWithFacebookController",function ($scope,facebookService) {
             facebookService.getResponse()
                 .then(function(response) {
                         $scope.resonse = response;
                        // alert(response);
+                    },
+                    function(response) {
+                        alert(response);
                     }
                 );
 
