@@ -84,29 +84,46 @@ angular.module("contactsApp", ['ngRoute'])
 
         })
 
-.service('facebookService', function($q) {
+// .service('facebookService', function() {
+//             this.getResponse= function() {
+//                 // let deferred = $q.defer();
+//                 FB.api('/me',
+//                     {fields: "id,name,birthday,gender,work,picture,education"
+//                     }, function(response) {
+//                         if (!response || response.error) {
+//                             // deferred.reject('Error occured');
+//                             console.log('errrorr');
+//                         } else {
+//                             // deferred.resolve(response);
+//
+//                             console.log('Successful login for: ' + response.name);
+//                             return response;
+//
+//                         }
+//                     });
+//                 // return deferred.promise;
+//                 // return response;
+//             }
 
-            this.getResponse= function() {
-                // let deferred = $q.defer();
+//     })
+    .factory('facebookService', function($q) {
+        return {
+            getResponse: function() {
+                var deferred = $q.defer();
                 FB.api('/me',
                     {fields: "id,name,birthday,gender,work,picture,education"
-                    }, function(response) {
-                        if (!response || response.error) {
-                            // deferred.reject('Error occured');
-                            console.log('errrorr');
-                        } else {
-                            // deferred.resolve(response);
-
-                            console.log('Successful login for: ' + response.name);
-                            return response;
-
-                        }
-                    });
-                // return deferred.promise;
-                // return response;
+                }, function(response) {
+                    if (!response || response.error) {
+                        deferred.reject('Error occured');
+                    } else {
+                        deferred.resolve(response);
+                    }
+                });
+                return deferred.promise;
             }
-
+        }
     })
+
 .service("Contacts", function($http) {
         this.getContacts = function() {
             return $http.get("/contacts").
@@ -200,16 +217,16 @@ angular.module("contactsApp", ['ngRoute'])
         }
     })
     .controller("loginWithFacebookController",function ($scope,facebookService) {
+
+
             facebookService.getResponse()
                 .then(function(response) {
-                        $scope.response = response;
-                       // alert(response);
+                    $scope.response = response;
                     },
                     function(response) {
                         alert(response);
                     }
                 );
-
 
     });
 

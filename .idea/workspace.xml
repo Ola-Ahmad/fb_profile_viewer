@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="061c8e11-9464-444c-9663-0ff5007b635e" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app.js" afterPath="$PROJECT_DIR$/public/js/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/fblogin.js" afterPath="$PROJECT_DIR$/public/js/fblogin.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -96,13 +94,13 @@
       <file leaf-file-name="app.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/js/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="368">
-              <caret line="42" column="30" lean-forward="false" selection-start-line="42" selection-start-column="30" selection-end-line="42" selection-end-column="30" />
+            <state relative-caret-position="245">
+              <caret line="219" column="0" lean-forward="true" selection-start-line="219" selection-start-column="0" selection-end-line="219" selection-end-column="0" />
               <folding>
                 <element signature="e#144#420#0" expanded="false" />
                 <element signature="e#456#572#0" expanded="false" />
-                <element signature="e#5354#5790#0" expanded="false" />
-                <element signature="e#5874#6625#0" expanded="false" />
+                <element signature="e#6014#6450#0" expanded="false" />
+                <element signature="e#6534#7285#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -303,12 +301,12 @@
       <option name="presentableId" value="Default" />
       <updated>1482863163485</updated>
       <workItem from="1482863168189" duration="26295000" />
-      <workItem from="1482919157807" duration="34676000" />
+      <workItem from="1482919157807" duration="35198000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="60971000" />
+    <option name="totallyTimeSpent" value="61493000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -373,8 +371,8 @@
           <folding>
             <element signature="e#144#420#0" expanded="false" />
             <element signature="e#456#572#0" expanded="false" />
-            <element signature="e#5354#5790#0" expanded="false" />
-            <element signature="e#5874#6625#0" expanded="false" />
+            <element signature="e#6014#6450#0" expanded="false" />
+            <element signature="e#6534#7285#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -583,13 +581,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/js/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="42" column="30" lean-forward="false" selection-start-line="42" selection-start-column="30" selection-end-line="42" selection-end-column="30" />
+        <state relative-caret-position="245">
+          <caret line="219" column="0" lean-forward="true" selection-start-line="219" selection-start-column="0" selection-end-line="219" selection-end-column="0" />
           <folding>
             <element signature="e#144#420#0" expanded="false" />
             <element signature="e#456#572#0" expanded="false" />
-            <element signature="e#5354#5790#0" expanded="false" />
-            <element signature="e#5874#6625#0" expanded="false" />
+            <element signature="e#6014#6450#0" expanded="false" />
+            <element signature="e#6534#7285#0" expanded="false" />
           </folding>
         </state>
       </provider>
