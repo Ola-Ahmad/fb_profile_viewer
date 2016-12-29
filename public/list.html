@@ -70,10 +70,9 @@
                             id: "_id.$oid",
                             fields: {
                                 "_id.$oid": { editable: false, nullable: true },
-                                fullName: { defaultValue: 'Name',
-                                    validation: { required: true } },
+                                fullName: { defaultValue: 'Name',validation: { required: true } },
                                 facebookURL: { defaultValue:'facebook.com', validation: { required: true} },
-                                facebookID: {  type: "number", defaultValue:0,validation: { min: 0, required: true }
+                                facebookID: {   defaultValue:0,type: "number",validation: { min: 0, required: true }
                                 }
 
                             }
@@ -81,7 +80,6 @@
                     }
                 },
                 scrollable: false,
-
                 sortable: true,
                 pageable: {
 //                    refresh: true,
@@ -100,8 +98,6 @@
                     template:"<a href='index.html\\#!/login'>#: fullName #</a>",
                      field: "fullName",
                     title: "Contact Name",
-                    width: 240
-
                 }, {
                     template:"<a href='#: facebookURL #'  target='_blank'> #: facebookURL # </a>",
                     field: "facebookURL",
@@ -110,7 +106,7 @@
                     field: "facebookID",
                     title: "Facebook ID"
                 } ,{
-                        command: ["edit", "destroy"], title: "&nbsp;", width: "250px"
+                        command: ["edit", "destroy"], title: "&nbsp;"
                 }],
                     editable: "inline"
             });
