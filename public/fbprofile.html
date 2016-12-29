@@ -19,12 +19,12 @@
                 <section id="profile" class="well">
                     <div class="row">
                         <div class="col-lg-5 col-sm-2">
-                            <img ng-if="response.picture"  src="{{response.picture }}" class="ra-avatar img-responsive" />
+                            <img ng-if="response.picture.url"  src="{{response.picture.url}}" class="ra-avatar img-responsive" />
                         </div>
                         <div class="col-lg-7 col-sm-2">
-                            <span  ng-if="response.name" > name:{{ response.name }}</span>
-                            <span  ng-if="response.gender" > gender: {{ response.gender }}</span>
-                            <span ng-if="response.birthday"> birthday : {{ response.birthday }}</span>
+                            <span class="ra-name "  ng-if="response.name" > name:{{ response.name }}</span>
+                            <span  class="ra-gender" ng-if="response.gender" > gender: {{ response.gender }}</span>
+                            <span class="ra-birthday " ng-if="response.birthday"> birthday : {{ response.birthday }}</span>
                         </div>
                     </div>
                 </section>

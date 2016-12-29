@@ -62,6 +62,7 @@ li {
 
 .panel-success  {
     border-color:#1b6d85;
+    color: #0f0f0f;
 }
 .panel-success .panel-heading{
     background-color:cadetblue;
@@ -105,27 +106,16 @@ hr{
     padding: 0 19px 0.7222em;
 }
 
-/*.ra-avatar {*/
-    /*border: 1px solid #e7e7e7;*/
-    /*border-radius: 2px;*/
-/*}*/
+.ra-avatar {
+    border: 1px solid #e7e7e7;
+    border-radius: 2px;
+}
 
-/*.ra-first-name {*/
-    /*display: block;*/
-    /*margin-top: 0.8571em;*/
-/*}*/
+.ra-name , .ra-birthday ,.ra-gender {
+    display: block;
+    margin-top: 0.8571em;
+}
 
-/*.ra-last-name {*/
-    /*display: block;*/
-    /*font-size: 1.7143em;*/
-    /*line-height: 1.3em;*/
-/*}*/
-
-/*.ra-position {*/
-    /*font-size: 0.8571em;*/
-    /*color: #999;*/
-    /*padding-bottom: 2em;*/
-/*}*/
 
 /*footer Socail btns */
 .social:hover {
