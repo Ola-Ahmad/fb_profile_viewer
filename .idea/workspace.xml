@@ -74,8 +74,8 @@
       <file leaf-file-name="kendoGrid.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/js/kendoGrid.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="5" column="27" lean-forward="false" selection-start-line="5" selection-start-column="27" selection-end-line="5" selection-end-column="27" />
+            <state relative-caret-position="401">
+              <caret line="67" column="49" lean-forward="false" selection-start-line="67" selection-start-column="49" selection-end-line="67" selection-end-column="49" />
               <folding>
                 <element signature="e#0#39#0" expanded="false" />
               </folding>
@@ -346,12 +346,12 @@
       <updated>1482863163485</updated>
       <workItem from="1482863168189" duration="26295000" />
       <workItem from="1482919157807" duration="51895000" />
-      <workItem from="1483002837744" duration="6136000" />
+      <workItem from="1483002837744" duration="6858000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="84326000" />
+    <option name="totallyTimeSpent" value="85048000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -739,8 +739,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/js/kendoGrid.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="5" column="27" lean-forward="false" selection-start-line="5" selection-start-column="27" selection-end-line="5" selection-end-column="27" />
+        <state relative-caret-position="401">
+          <caret line="67" column="49" lean-forward="false" selection-start-line="67" selection-start-column="49" selection-end-line="67" selection-end-column="49" />
           <folding>
             <element signature="e#0#39#0" expanded="false" />
           </folding>

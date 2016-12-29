@@ -36,7 +36,7 @@ $(document).ready(function () {
                 }
             }
         },
-        scrollable: false,
+       // scrollable: false,
         sortable: true,
         pageable: {
 //                    refresh: true,
@@ -55,6 +55,8 @@ $(document).ready(function () {
                 template:"<a href='index.html\\#!/login'>#: fullName #</a>",
                 field: "fullName",
                 title: "Contact Name",
+                width: 240
+
             }, {
                 template:"<a href='#: facebookURL #'  target='_blank'> #: facebookURL # </a>",
                 field: "facebookURL",
@@ -63,7 +65,7 @@ $(document).ready(function () {
                 field: "facebookID",
                 title: "Facebook ID",
             } ,{
-                command: ["edit", "destroy"], title: "&nbsp;"
+                command: ["edit", "destroy"], title: "&nbsp;",width: "250px"
             }],
         editable: "inline"
     });
