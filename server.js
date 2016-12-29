@@ -47,8 +47,8 @@ app.use(express.static(path.join(__dirname,'public')));
 // Create a database variable outside of the database connection callback to reuse the connection pool in your app.
 let db;
 // Connect to the database before starting the application server.
-let url  = "mongodb://admin:olaeng3loosh@localhost:27017/fb_profile_viewer_db"
-mongodb.MongoClient.connect(process.env.MONGOLAB_URI ||url , function (err, database) {
+// let url  = "mongodb://admin:olaeng3loosh@ds145128.mlab.com:45128/fb_profile_viewer_db"
+mongodb.MongoClient.connect(process.env.MONGOLAB_URI  , function (err, database) {
     if (err) {
         console.log(err);
         process.exit(1);
