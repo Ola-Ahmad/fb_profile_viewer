@@ -3,6 +3,7 @@
  */
 $(document).ready(function () {
     $("#grid").kendoGrid({
+        theme :"Bootstrap",
         dataSource: {
             transport: {
                 read: {
