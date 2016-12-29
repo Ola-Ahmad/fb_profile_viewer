@@ -9,6 +9,25 @@
     <base href="/index.html">
     <link rel="shortcut icon" href="/images/icon.PNG" />
 
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="/js/html5shiv.min.js"></script>
+      <script src="/js/respond.min.js"></script>
+      <![endif]-->
+    <!-- Bootstrap -->
+    <link href="/stylesheets/bootstrap.min.css" rel="stylesheet">
+    <!--Kendo-->
+    <link rel="stylesheet" href="/stylesheets/kendo.common-bootstrap.min.css" />
+    <link rel="stylesheet" href="/stylesheets/kendo.bootstrap.min.css" />
+    <!--<link rel="stylesheet" href="/stylesheets/kendo.bootstrap.mobile.min.css" />-->
+
+    <!--Awesome fonts-->
+    <link href="/stylesheets/font-awesome.min.css" rel="stylesheet">
+
+    <!-- Application -->
+    <link href="/stylesheets/style.css" rel="stylesheet">
+
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="/js/jquery-3.1.1.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
@@ -26,40 +45,6 @@
 
     <!-- Include the application JS file -->
     <script src="/js/app.js"></script>
-
-
-
-
-
-
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="/js/html5shiv.min.js"></script>
-      <script src="/js/respond.min.js"></script>
-      <![endif]-->
-    <!-- Bootstrap -->
-    <link href="/stylesheets/bootstrap.min.css" rel="stylesheet">
-    <!--Kendo-->
-    <link rel="stylesheet" href="/stylesheets/kendo.common-bootstrap.min.css" />
-    <link rel="stylesheet" href="/stylesheets/kendo.bootstrap.min.css" />
-    <!--<link rel="stylesheet" href="/stylesheets/kendo.common.min.css" />-->
-
-
-
-    <!--<link rel="stylesheet" href="/stylesheets/kendo.common-material.min.css" />-->
-    <!--<link rel="stylesheet" href="/stylesheets/kendo.material.min.css" />-->
-    <!--<link rel="stylesheet" href="/stylesheets/kendo.material.mobile.min.css" />-->
-    <!--<link rel="stylesheet" href="/stylesheets/kendo.bootstrap.mobile.min.css" />-->
-    <!--<link rel="stylesheet" href="/stylesheets/kendo.default.min.css" />-->
-    <!--<link rel="stylesheet" href="/stylesheets/kendo.default.mobile.min.css" />-->
-    <!--Awesome fonts-->
-    <link href="/stylesheets/font-awesome.min.css" rel="stylesheet">
-
-    <!-- Application -->
-    <link href="/stylesheets/style.css" rel="stylesheet">
-
-
 
   </head>
 
@@ -102,20 +87,24 @@
 
   <!--</script>-->
 
-  <nav class="navbar navbar-default navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-          <div class="navbar-brand" href="/"> List</div>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="/">Home</a></li>
-          </ul>
-        </div>
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <a class="navbar-brand" href="/">Facebook Profile viewer</a>
       </div>
-    </nav>
 
-    <!-- Dynamically render templates -->
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="/">Home</a></li>
+        </ul>
+      </div>
+    </div><!-- /.container-fluid -->
+  </nav>
+
+
+
+  <!-- Dynamically render templates -->
     <div class="container" ng-view>
     </div>
   <footer class="row footer">

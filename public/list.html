@@ -1,38 +1,48 @@
-<script src="/js/fblogin.js"></script>
-<div class = "row">
-  <div class="col-md-6">
-    <h2>
-      Users
-    </h2>
-  </div>
-  <div class="col-md-3">
-  </div>
-  <div class="col-md-2">
-    <a class="btn btn-default" href="index.html#!/new/contact">New</a>
-      <fb:login-button scope="public_profile,email,user_work_history,user_about_me,user_birthday,user_education_history"
-                       onlogin="checkLoginState();">
-      </fb:login-button>
-      <div id="status">
-      </div>
-  </div>
-  <div class="col-md-1">
-  </div>
-</div>
-<div class="container">
-      <table id="UserList"  cellspacing="0" width="100%" class="table table-hover">
-          <thead></thead>
-        <tbody>
-                <tr ng-repeat="contact in contacts | orderBy:'fullName'" style="cursor:pointer">
-                    <td>
-                      <a ng-href="index.html#!/contact/{{contact._id}}">{{ contact.fullName}}</a>
-                    </td>
-                    <td>
-                          <button  class="btn btn-default" ng-click="deleteContact(contact._id)">Delete</button>
-                    </td>
-              </tr>
-        </tbody>
-      </table>
-</div>
+
+<!--<div class="row ">-->
+    <!--<div class="col-xs-12">-->
+        <!--<div class="page-header ">-->
+            <!--<h1>List of contacts</h1>-->
+        <!--</div>-->
+    <!--</div>-->
+<!--</div>-->
+
+<!--<div class = "row">-->
+  <!--<div class="col-xs-12  ">-->
+<!--<div class="pull-right">-->
+    <!--<a class="btn btn-default" href="index.html#!/new/contact">New</a>-->
+    <!--<fb:login-button scope="public_profile,email,user_work_history,user_about_me,user_birthday,user_education_history"-->
+                     <!--onlogin="checkLoginState();">-->
+    <!--</fb:login-button>-->
+    <!--<div id="status">-->
+    <!--</div>-->
+<!--</div>-->
+  <!--</div>-->
+<!--</div>-->
+
+<!--<div class="row" id="usersGrid">-->
+    <!--<div class="col-xs-12">-->
+        <div id="contacts-grid"></div>
+
+    <!--</div>-->
+<!--</div>-->
+
+
+
+<!--<div class="row">-->
+    <!--<div class="col-xs-12">-->
+      <!--<table id="UserList"  cellspacing="0" width="100%" class="table table-hover">-->
+          <!--<thead></thead>-->
+        <!--<tbody>-->
+                <!--<tr ng-repeat="contact in contacts | orderBy:'fullName'" style="cursor:pointer">-->
+                    <!--<td>-->
+                      <!--<a ng-href="index.html#!/contact/{{contact._id}}">{{ contact.fullName}}</a>-->
+                    <!--</td>-->
+              <!--</tr>-->
+        <!--</tbody>-->
+      <!--</table>-->
+    <!--</div>-->
+<!--</div>-->
 <!--<script>-->
     <!--$(document).ready(function() {-->
         <!--$('#UserList').DataTable({-->
@@ -41,9 +51,8 @@
     <!--} );-->
 <!--</script>-->
 
-<div class="container" id="usersGrid">
-    <div id="grid"></div>
-    <script src="/js/kendoGrid.js"></script>
-</div>
 
 
+<!--<script src="/js/fblogin.js"></script>-->
+
+<script src="/js/kendoGrid.js"></script>

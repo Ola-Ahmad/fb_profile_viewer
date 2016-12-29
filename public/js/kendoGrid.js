@@ -2,8 +2,7 @@
  * Created by Hp on 29/12/2016.
  */
 $(document).ready(function () {
-    $("#grid").kendoGrid({
-        theme :"Bootstrap",
+    $("#contacts-grid").kendoGrid({
         dataSource: {
             transport: {
                 read: {
@@ -20,28 +19,34 @@ $(document).ready(function () {
                     }
                 }
             },
-            batch: true,
+            // batch: true,
             pageSize: 6,
+            serverPaging: true,
+            serverSorting: true,
+            serverFiltering: true,
             schema: {
                 model: {
                     id: "_id.$oid",
                     fields: {
                         "_id.$oid": { editable: false, nullable: true },
-                        fullName: { defaultValue: 'Name',validation: { required: true } },
-                        facebookURL: { defaultValue:'facebook.com', validation: { required: true} },
-                        facebookID: {   defaultValue:0,type: "number",validation: { min: 0, required: true }
+                        fullName: { type: "string",defaultValue: 'Name',validation: { required: true } },
+                        facebookURL: {type: "string", defaultValue:'facebook.com', validation: { required: true} },
+                        facebookID: {  type: "number", defaultValue:0,validation: { min: 0, required: true }
                         }
-
                     }
                 }
             }
         },
-       // scrollable: false,
+        scrollable: false,
         sortable: true,
+        groupable: true,
         pageable: {
-//                    refresh: true,
-            pageSizes: true,
+            // pageSizes: true,
             buttonCount: 3
+        },
+        filterable: {
+            mode: "row",
+
         },
         toolbar: ["create"],
         columns: [
@@ -55,20 +60,45 @@ $(document).ready(function () {
                 template:"<a href='index.html\\#!/login'>#: fullName #</a>",
                 field: "fullName",
                 title: "Contact Name",
-                width: 100
+                width: 200,
+                filterable: {
+                    cell: {
+                        showOperators: false
+                    }
+                }
 
-            }, {
+                }, {
                 template:"<a href='#: facebookURL #'  target='_blank'> #: facebookURL # </a>",
                 field: "facebookURL",
                 title: "Facebook profile URL",
-                width: 100
+               //
+                width: "20%",
+                filterable: {
+                    cell: {
+                        showOperators: false
+                    }
+                }
+
             }, {
                 field: "facebookID",
                 title: "Facebook ID",
-                width: 100
+                // width: 150,
+                filterable: {
+                    cell: {
+                        showOperators: false
+                    }
+                }
+
             } ,{
-                command: ["edit", "destroy"], title: "&nbsp;",width: 200
+                command: ["edit","destroy"], title: "&nbsp;",
+                // width: 200
             }],
         editable: "inline"
     });
+
+
+
+
+
+
 });

@@ -1,9 +1,33 @@
-body {
-  padding-top: 70px;
-  margin: 0;
+*{
+    margin:0;
+    padding:0;
+    outline:0;
+    border:0;
+    font-size:100%;
+    background:none;
+    transition:0.5s;
 
 }
+html, body {
+    width:100%;
+}
 
+body {
+  /*padding-top: 70px;*/
+    margin: 0 auto;
+    padding: 1em;
+    font-family: 'Lucida Grande', 'Lucida Sans Unicode', Arial, sans-serif;
+    font-size: 1.5em;
+    line-height: 1.4em;
+    background: #222;
+    color: #fff;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    min-width: 900px;
+}
+h1 {
+    line-height: 1em;
+}
 a{
     text-decoration: none;
 
@@ -11,9 +35,73 @@ a{
 a:hover{
     text-decoration: none;
 }
+li {
+    list-style: none;
+}
+.navbar , .navbar-default {
+    color:  #1b6d85;
+    background: #222;
+    border-color: #1b6d85;
+}
+.navbar-default .navbar-nav > .active > a{
+    background-color: #1b6d85;
+    text-decoration: none;
+}
+.navbar-default .navbar-nav > .active > a:hover{
+    background-color: #2b98f3;
+    text-decoration: none;
+}
+#contacts-grid{
+    margin: 2%;
+    background-color: #00a2eb;
+/*max-width: 900px;*/
+}
+
+
+hr{
+    border-top-color: #1b6d85;
+}
+.page-header {
+    border-bottom-color: #1b6d85;
+}
 
 
 
+
+/*profile*/
+#profile {
+    position: relative;
+}
+
+.ra-well-title {
+    font-size: 1.2857em;
+    line-height: 1.2857em;
+    border-bottom: 1px solid #e7e7e7;
+    margin: -5px -19px 0.8333em;
+    padding: 0 19px 0.7222em;
+}
+
+.ra-avatar {
+    border: 1px solid #e7e7e7;
+    border-radius: 2px;
+}
+
+.ra-first-name {
+    display: block;
+    margin-top: 0.8571em;
+}
+
+.ra-last-name {
+    display: block;
+    font-size: 1.7143em;
+    line-height: 1.3em;
+}
+
+.ra-position {
+    font-size: 0.8571em;
+    color: #999;
+    padding-bottom: 2em;
+}
 
 /*footer Socail btns */
 .social:hover {
