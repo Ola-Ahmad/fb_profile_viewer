@@ -20,10 +20,10 @@ $(document).ready(function () {
                 }
             },
             // batch: true,
-            pageSize: 6,
-            serverPaging: true,
-            serverSorting: true,
-            serverFiltering: true,
+            pageSize: 5,
+            // serverPaging: true,
+            // serverSorting: true,
+            // serverFiltering: true,
             schema: {
                 model: {
                     id: "_id.$oid",
@@ -39,9 +39,9 @@ $(document).ready(function () {
         },
         scrollable: false,
         sortable: true,
-        groupable: true,
+        // groupable: true,
         pageable: {
-            // pageSizes: true,
+            pageSizes: true,
             buttonCount: 3
         },
         filterable: {
@@ -60,7 +60,7 @@ $(document).ready(function () {
                 template:"<a href='index.html\\#!/login'>#: fullName #</a>",
                 field: "fullName",
                 title: "Contact Name",
-                width: 200,
+                width: "15%",
                 filterable: {
                     cell: {
                         showOperators: false
@@ -71,8 +71,7 @@ $(document).ready(function () {
                 template:"<a href='#: facebookURL #'  target='_blank'> #: facebookURL # </a>",
                 field: "facebookURL",
                 title: "Facebook profile URL",
-               //
-                width: "20%",
+                width: "30%",
                 filterable: {
                     cell: {
                         showOperators: false
@@ -82,6 +81,8 @@ $(document).ready(function () {
             }, {
                 field: "facebookID",
                 title: "Facebook ID",
+                width: "20%",
+
                 // width: 150,
                 filterable: {
                     cell: {
@@ -89,10 +90,22 @@ $(document).ready(function () {
                     }
                 }
 
-            } ,{
+            } ,
+            {
                 command: ["edit","destroy"], title: "&nbsp;",
-                // width: 200
-            }],
+                width: "20%"
+
+            }
+            // ,
+            // { command: [
+            //     { name: "edit",
+            //     title: "&nbsp;",
+            //     width: "20%" },
+            // { name: "destroy",
+            //     title: "&nbsp;",
+            //     width: "20%"
+            // }]}
+            ],
         editable: "inline"
     });
 

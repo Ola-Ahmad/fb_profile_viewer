@@ -10,11 +10,11 @@
 }
 html, body {
     width:100%;
+    box-sizing: border-box;
 }
 
 body {
   /*padding-top: 70px;*/
-    margin: 0 auto;
     padding: 1em;
     font-family: 'Lucida Grande', 'Lucida Sans Unicode', Arial, sans-serif;
     font-size: 1.5em;
@@ -23,7 +23,7 @@ body {
     color: #fff;
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
-    min-width: 900px;
+    /*min-width: 900px;*/
 }
 h1 {
     line-height: 1em;
@@ -38,23 +38,35 @@ a:hover{
 li {
     list-style: none;
 }
-.navbar , .navbar-default {
-    color:  #1b6d85;
-    background: #222;
+
+ .navbar-default {
+    background-color: cadetblue;
     border-color: #1b6d85;
 }
+.navbar-default .navbar-brand{
+    font-size: large;
+    font-weight: 600;
+    color:blanchedalmond;
+}
 .navbar-default .navbar-nav > .active > a{
+    /*color:aliceblue;*/
     background-color: #1b6d85;
     text-decoration: none;
 }
 .navbar-default .navbar-nav > .active > a:hover{
-    background-color: #2b98f3;
+    /*background-color: #2b98f3;*/
+    background-color: #1b6d90;
+
     text-decoration: none;
 }
-#contacts-grid{
-    margin: 2%;
-    background-color: #00a2eb;
-/*max-width: 900px;*/
+
+.panel-success  {
+    border-color:#1b6d85;
+}
+.panel-success .panel-heading{
+    background-color:cadetblue;
+    color:beige;;
+
 }
 
 
@@ -64,13 +76,25 @@ hr{
 .page-header {
     border-bottom-color: #1b6d85;
 }
+#contacts-grid{
+    margin: 2%;
+    background-color: cadetblue;
+    /*max-width: 900px;*/
+}
+.k-header{
+    /*background-color: cadetblue;*/
 
-
-
+}
+.k-grid tbody .k-button {
+    min-width: 100px;
+    width: 100px;}
+.k-grid-header .k-filter-row{
+/*background-color: #1b6d85;*/
+}
 
 /*profile*/
 #profile {
-    position: relative;
+    /*position: relative;*/
 }
 
 .ra-well-title {
@@ -81,27 +105,27 @@ hr{
     padding: 0 19px 0.7222em;
 }
 
-.ra-avatar {
-    border: 1px solid #e7e7e7;
-    border-radius: 2px;
-}
+/*.ra-avatar {*/
+    /*border: 1px solid #e7e7e7;*/
+    /*border-radius: 2px;*/
+/*}*/
 
-.ra-first-name {
-    display: block;
-    margin-top: 0.8571em;
-}
+/*.ra-first-name {*/
+    /*display: block;*/
+    /*margin-top: 0.8571em;*/
+/*}*/
 
-.ra-last-name {
-    display: block;
-    font-size: 1.7143em;
-    line-height: 1.3em;
-}
+/*.ra-last-name {*/
+    /*display: block;*/
+    /*font-size: 1.7143em;*/
+    /*line-height: 1.3em;*/
+/*}*/
 
-.ra-position {
-    font-size: 0.8571em;
-    color: #999;
-    padding-bottom: 2em;
-}
+/*.ra-position {*/
+    /*font-size: 0.8571em;*/
+    /*color: #999;*/
+    /*padding-bottom: 2em;*/
+/*}*/
 
 /*footer Socail btns */
 .social:hover {
@@ -130,9 +154,7 @@ hr{
 #social-tw:hover {
     color: #4099FF;
 }
-#social-gp:hover {
-    color: #d34836;
-}
+
 #social-em:hover {
     color: #f39c12;
 }

@@ -1,50 +1,61 @@
 
-<div class="row clearfix">
-    <div class="col-lg-4">
-        <section id="profile" class="well">
-            <h2 class="ra-well-title">Profile</h2>
-
-            <div class="row">
-                <div class="col-lg-5 col-sm-2">
-                    <img src="assets/avatar.jpg" class="ra-avatar img-responsive" />
-                </div>
-
-                <div class="col-lg-7 col-sm-2">
-                    <span class="ra-first-name">Jonathan</span>
-                    <span class="ra-last-name">Dodsworth</span>
-                    <div class="ra-position">Inside Sales Coordinator</div>
-                </div>
-            </div>
-        </section>
-    </div>
 
 
 
 <div class = "row">
-    <div class="col-xs-6">
-        <h2>
-            {{response.name }}
-        </h2>
-    </div>
-    <div class="col-md-3">
-        <img ng-if="response.picture" src="{{response.picture}}">
-    </div>
-    <div class="col-md-2">
-    </div>
-    <div class="col-md-1">
+    <div class="col-xs-12 " >
+        <a class="btn btn-default pull-right" style="margin-bottom: 2%" href=index.html#!/">Back</a></p>
     </div>
 </div>
-<div  class="container">
-    <div>
-        <p ng-if="response.name">name:{{ response.name }}</p>
-        <p ng-if="response.birthday">birthday : {{ response.birthday }} </p>
-        <p ng-if="response.gender"> gender: {{ response.gender }} </p>
-        <p ng-if="response.work"> work: {{ response.work }} </p>
-        <p ng-if="response.education"> education: {{ response.education }} </p>
-        <p ng-if="response.picture"> profile pic: {{response.profile }} </p>
-        <p ng-if="response.picture.data.url"> profile pic: {{response.picture.data.url }} </p>
-        <p>
-            <a class="btn btn-default" href=index.html#!/">Back</a></p>
+<div class="row ">
+
+<div class="panel panel-success ">
+    <div class="panel-heading">
+        <h3 class="panel-title">Profile</h3>
+    </div>
+    <div class="panel-body">
+        <div class="row clearfix">
+            <div class="col-lg-12">
+                <section id="profile" class="well">
+                    <div class="row">
+                        <div class="col-lg-5 col-sm-2">
+                            <img ng-if="response.picture"  src="{{response.picture }}" class="ra-avatar img-responsive" />
+                        </div>
+                        <div class="col-lg-7 col-sm-2">
+                            <span  ng-if="response.name" > name:{{ response.name }}</span>
+                            <span  ng-if="response.gender" > gender: {{ response.gender }}</span>
+                            <span ng-if="response.birthday"> birthday : {{ response.birthday }}</span>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</div>
+<div class="row">
+    <div class="panel panel-success ">
+        <div class="panel-heading">
+            <h3 class="panel-title">Education</h3>
+        </div>
+        <div class="panel-body">
+            Panel content
+        </div>
 
     </div>
+
+</div>
+<div class="row">
+    <div class="panel panel-success ">
+        <div class="panel-heading">
+            <h3 class="panel-title">Work history</h3>
+        </div>
+        <div class="panel-body">
+            Panel content
+        </div>
+
+    </div>
+
 </div>
