@@ -98,15 +98,18 @@
                     template:"<a href='index.html\\#!/login'>#: fullName #</a>",
                      field: "fullName",
                     title: "Contact Name",
+                        width: "20%"
                 }, {
                     template:"<a href='#: facebookURL #'  target='_blank'> #: facebookURL # </a>",
                     field: "facebookURL",
-                    title: "Facebook profile URL"
+                    title: "Facebook profile URL",
+                        width: "30%"
                 }, {
                     field: "facebookID",
-                    title: "Facebook ID"
+                    title: "Facebook ID",
+                        width: "30%"
                 } ,{
-                        command: ["edit", "destroy"], title: "&nbsp;"
+                        command: ["edit", "destroy"], title: "&nbsp;",width: "20%" ,
                 }],
                     editable: "inline"
             });
