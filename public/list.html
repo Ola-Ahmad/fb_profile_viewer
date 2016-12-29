@@ -100,13 +100,13 @@
                 toolbar: ["create"],
                 columns: [
                     {
-                        field: "_id.$oid",
+                        field: ["_id.$oid"],
                         title: "ID",
                         width: 240
 
                     },
                     {
-                    template:"<a href='index.html#!/contact/#: _id.$oid #'>#: fullName #</a>",
+                    template:"<a href='index.html#!/contact/#: [_id.$oid] #'>#: fullName #</a>",
                      field: "fullName",
                     title: "Contact Name",
                     width: 240
