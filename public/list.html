@@ -14,7 +14,6 @@
       </fb:login-button>
       <div id="status">
       </div>
-
   </div>
   <div class="col-md-1">
   </div>
@@ -28,19 +27,13 @@
                       <a ng-href="index.html#!/contact/{{contact._id}}">{{ contact.fullName}}</a>
                     </td>
                     <td>
-                  <p>
-                        <a href="index.html#!/">
-                          <button  class="btn btn-default" ng-click="deleteContact(contact._id)">Delete</button></a>
-                      </p>
+                          <button  class="btn btn-default" ng-click="deleteContact(contact._id)">Delete</button>
                     </td>
               </tr>
         </tbody>
       </table>
 </div>
-
-
 <!--<script>-->
-
     <!--$(document).ready(function() {-->
         <!--$('#UserList').DataTable({-->
             <!--"lengthChange": false-->
@@ -48,12 +41,12 @@
     <!--} );-->
 <!--</script>-->
 
-
 <div id="example">
     <div id="grid"></div>
     <script>
         $(document).ready(function () {
             $("#grid").kendoGrid({
+                theme: "MetroBlack",
                 dataSource: {
                     transport: {
                         read: {
@@ -70,7 +63,6 @@
                             }
                         }
                     },
-
                     batch: true,
                     pageSize: 6,
                     schema: {
@@ -88,6 +80,8 @@
                         }
                     }
                 },
+                scrollable: false,
+
                 sortable: true,
                 pageable: {
 //                    refresh: true,

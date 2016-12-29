@@ -100,7 +100,6 @@ angular.module("contactsApp", ['ngRoute'])
             }
         }
     })
-
 .service("Contacts", function($http) {
         this.getContacts = function() {
             return $http.get("/contacts").
