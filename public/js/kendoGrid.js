@@ -67,7 +67,7 @@ $(document).ready(function () {
                 title: "Facebook ID",
                 width: 100
             } ,{
-                command: ["edit", "destroy"], title: "&nbsp;",width: 100
+                command: ["edit", "destroy"], title: "&nbsp;",width: 200
             }],
         editable: "inline"
     });
