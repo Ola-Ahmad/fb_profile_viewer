@@ -55,19 +55,19 @@ $(document).ready(function () {
                 template:"<a href='index.html\\#!/login'>#: fullName #</a>",
                 field: "fullName",
                 title: "Contact Name",
-                width: 150
+                width: "20%"
 
             }, {
                 template:"<a href='#: facebookURL #'  target='_blank'> #: facebookURL # </a>",
                 field: "facebookURL",
                 title: "Facebook profile URL",
-                width:200
+                width: "30%"
             }, {
                 field: "facebookID",
                 title: "Facebook ID",
-                width:200
+                width: "30%"
             } ,{
-                command: ["edit", "destroy"], title: "&nbsp;",width: "200px"
+                command: ["edit", "destroy"], title: "&nbsp;",width: "20%"
             }],
         editable: "inline"
     });
