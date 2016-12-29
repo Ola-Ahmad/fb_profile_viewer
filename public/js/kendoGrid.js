@@ -3,7 +3,6 @@
  */
 $(document).ready(function () {
     $("#grid").kendoGrid({
-        theme: "MetroBlack",
         dataSource: {
             transport: {
                 read: {
