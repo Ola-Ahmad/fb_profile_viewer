@@ -41,7 +41,7 @@ $(document).ready(function () {
         pageable: {
 //                    refresh: true,
             pageSizes: true,
-            buttonCount: 4
+            buttonCount: 3
         },
         toolbar: ["create"],
         columns: [
@@ -55,19 +55,19 @@ $(document).ready(function () {
                 template:"<a href='index.html\\#!/login'>#: fullName #</a>",
                 field: "fullName",
                 title: "Contact Name",
-                width: 50
+                width: 100
 
             }, {
                 template:"<a href='#: facebookURL #'  target='_blank'> #: facebookURL # </a>",
                 field: "facebookURL",
                 title: "Facebook profile URL",
-                width: 50
+                width: 100
             }, {
                 field: "facebookID",
                 title: "Facebook ID",
-                width: 50
+                width: 100
             } ,{
-                command: ["edit", "destroy"], title: "&nbsp;",width: 50
+                command: ["edit", "destroy"], title: "&nbsp;",width: 100
             }],
         editable: "inline"
     });
