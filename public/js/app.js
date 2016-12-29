@@ -38,7 +38,7 @@ angular.module("contactsApp", ['ngRoute'])
 
     })
     .run(function($rootScope, $window) {
-            // $rootScope.user = {};
+            $rootScope.user = {};
             $window.fbAsyncInit = function() {
                 // Executed when the SDK is loaded
                 FB.init({
@@ -73,9 +73,8 @@ angular.module("contactsApp", ['ngRoute'])
 
 
             };
-
             (function(d, s, id) {
-                var js, fjs = d.getElementsByTagName(s)[0];
+                let js, fjs = d.getElementsByTagName(s)[0];
                 if (d.getElementById(id)) return;
                 js = d.createElement(s); js.id = id;
                 js.src = "//connect.facebook.net/en_US/sdk.js";
@@ -84,28 +83,6 @@ angular.module("contactsApp", ['ngRoute'])
 
         })
 
-// .service('facebookService', function() {
-//             this.getResponse= function() {
-//                 // let deferred = $q.defer();
-//                 FB.api('/me',
-//                     {fields: "id,name,birthday,gender,work,picture,education"
-//                     }, function(response) {
-//                         if (!response || response.error) {
-//                             // deferred.reject('Error occured');
-//                             console.log('errrorr');
-//                         } else {
-//                             // deferred.resolve(response);
-//
-//                             console.log('Successful login for: ' + response.name);
-//                             return response;
-//
-//                         }
-//                     });
-//                 // return deferred.promise;
-//                 // return response;
-//             }
-
-//     })
 .factory('facebookService', function($q) {
         return {
             getResponse: function() {
@@ -220,6 +197,7 @@ angular.module("contactsApp", ['ngRoute'])
             facebookService.getResponse()
                 .then(function(response) {
                     $scope.response = response;
+                   // $scope.work = response.work
                     },
                     function(response) {
                         alert(response);
