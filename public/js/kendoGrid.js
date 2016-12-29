@@ -55,16 +55,13 @@ $(document).ready(function () {
                 template:"<a href='index.html\\#!/login'>#: fullName #</a>",
                 field: "fullName",
                 title: "Contact Name",
-                width: "70px"
             }, {
                 template:"<a href='#: facebookURL #'  target='_blank'> #: facebookURL # </a>",
                 field: "facebookURL",
                 title: "Facebook profile URL",
-                width: "20%"
             }, {
                 field: "facebookID",
                 title: "Facebook ID",
-
             } ,{
                 command: ["edit", "destroy"], title: "&nbsp;"
             }],
