@@ -78,9 +78,9 @@
                     pageSize: 6,
                     schema: {
                         model: {
-                            id: "_id",
+                            id: "_id.$oid",
                             fields: {
-                                _id: { editable: false, nullable: true },
+                                "_id.$oid": { editable: false, nullable: true },
                                 fullName: { defaultValue: 'Name',
                                     validation: { required: true } },
                                 facebookURL: { defaultValue:'facebook.com', validation: { required: true} },
@@ -99,6 +99,12 @@
                 },
                 toolbar: ["create"],
                 columns: [
+                    {
+                        field: "_id.$oid",
+                        title: "ID",
+                        width: 240
+
+                    },
                     {
                     field: "fullName",
                     title: "Contact Name",

@@ -61,9 +61,6 @@ mongodb.MongoClient.connect(process.env.MONGOLAB_URI, function (err, database) {
  * API ROUTES
  ********/
 
-
-
-
 // Generic error handler used by all endpoints.
 function handleError(res, reason, message, code) {
     console.log("ERROR: " + reason);
@@ -106,7 +103,7 @@ app.post("/contacts", function(req, res) {
  */
 
 app.get("/contacts/:id", function(req, res) {
-    db.collection(CONTACTS_COLLECTION).findOne( new ObjectID(req.params.id), function(err, doc) {
+    db.collection(CONTACTS_COLLECTION).findOne({ _id: new ObjectID(req.params.id) }, function(err, doc) {
         if (err) {
             handleError(res, err.message, "Failed to get contact");
         } else {
