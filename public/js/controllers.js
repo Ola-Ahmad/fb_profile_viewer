@@ -147,19 +147,19 @@ myapp .controller("loginWithFacebookController",function ($q,$scope,facebookServ
                                 });
 
 
-                                for (i=0;i<$scope.panier.length;i++){
-
-                                    $scope.listeCommandes.push({
-                                        idliste:idListe,
-                                        id:     $scope.panier[i].id,
-                                        photo:  $scope.panier[i].photo,
-                                        nom:    $scope.panier[i].nom,
-                                        quantite:$scope.panier[i].quantite,
-                                        prix:   $scope.panier[i].prix,
-                                        heureajout:$scope.getHeure()
-                                    });
-
-                                };
+                                // for (i=0;i<$scope.panier.length;i++){
+                                //
+                                //     $scope.listeCommandes.push({
+                                //         idliste:idListe,
+                                //         id:     $scope.panier[i].id,
+                                //         photo:  $scope.panier[i].photo,
+                                //         nom:    $scope.panier[i].nom,
+                                //         quantite:$scope.panier[i].quantite,
+                                //         prix:   $scope.panier[i].prix,
+                                //         heureajout:$scope.getHeure()
+                                //     });
+                                //
+                                // };
 
 
 
