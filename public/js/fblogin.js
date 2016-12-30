@@ -1,11 +1,54 @@
+
+// document.getElementById('loginBtn').addEventListener('click', function() {
+//     //do the login
+//     FB.login(function(response) {
+//         if (response.authResponse) {
+//             //user just authorized your app
+//             top.location.href = 'example.com/facebook_connect.php';
+//         }
+//     }, {scope: 'email,public_profile', return_scopes: true});
+// },
+//     false
+// );
+
+
+
+
+
+// $(document).ready(function(){
+//
+//     ​$(".loginbtn").click(function () {
+//         //do the login
+//         FB.login(function(response) {
+//             if (response.authResponse) {
+//                 //user just authorized your app
+//                 top.location.href = 'example.com/facebook_connect.php';
+//             }
+//         }, {scope: 'email,public_profile', return_scopes: true});
+//
+//
+//     });​
+// });​
 // This function is called when someone finishes with the Login
 // Button.  See the onlogin handler attached to it in the sample
 // code below.
-function checkLoginState() {
-    FB.getLoginStatus(function(response) {
-        statusChangeCallback(response);
+// function checkLoginState() {
+
+
+$(document).ready(function () {
+
+
+    $('.loginbtn').click(function () {
+        FB.getLoginStatus(function(response) {
+            console.log('getLoginStatus');
+            statusChangeCallback(response);
+        });
+
     });
-}
+
+});
+
+// }
 // This is called with the results from from FB.getLoginStatus().
 function statusChangeCallback(response) {
     console.log('statusChangeCallback');

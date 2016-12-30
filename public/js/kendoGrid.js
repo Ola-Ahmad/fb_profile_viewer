@@ -57,7 +57,9 @@ $(document).ready(function () {
 //
 //                    },
             {
-                template:"<a href='index.html\\#!/login'>#: fullName #</a>",
+                template:"<a class='loginbtn' href='index.html\\#!/login'>#: fullName #</a>",
+                // template:"<a class='loginbtn' href='#'>#: fullName #</a>",
+
                 field: "fullName",
                 title: "Contact Name",
                 width: "15%",

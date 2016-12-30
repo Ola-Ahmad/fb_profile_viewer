@@ -109,9 +109,10 @@ hr{
 .ra-avatar {
     border: 1px solid #e7e7e7;
     border-radius: 2px;
+    width:250px;
 }
 
-.ra-name , .ra-birthday ,.ra-gender {
+.ra-name , .ra-birthday ,.ra-gender ,.ra-email,.ra-location{
     display: block;
     margin-top: 0.8571em;
 }
