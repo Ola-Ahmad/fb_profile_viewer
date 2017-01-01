@@ -2,53 +2,65 @@
  * Created by Hp on 30/12/2016.
  */
 
+myapp.controller("mainController", function(contacts, Contacts, $scope,$http) {
 
-myapp.controller("NewContactController", function($scope, $location, Contacts) {
-    // $scope.back = function() {
-    //     $location.path("/");
-    // }
-    //
-    // $scope.saveContact = function(contact) {
-    //     Contacts.createContact(contact).then(function(doc) {
-    //         var contactUrl = "/contact/" + doc.data._id;
-    //         $location.path(contactUrl);
-    //     }, function(response) {
-    //         alert(response);
-    //     });
-    // }
-})
-myapp.controller("EditContactController", function($scope, $routeParams, Contacts) {
-    // Contacts.getContact($routeParams.contactId).then(function(doc) {
-    //     $scope.contact = doc.data;
-    // }, function(response) {
-    //     alert(response);
-    // });
-    //
-    // $scope.toggleEdit = function() {
-    //     $scope.editMode = true;
-    //     $scope.contactFormUrl = "contact-form.html";
-    // }
-    //
-    // $scope.back = function() {
-    //     $scope.editMode = false;
-    //     $scope.contactFormUrl = "";
-    // }
-    //
-    // $scope.saveContact = function(contact) {
-    //     Contacts.editContact(contact);
-    //     $scope.editMode = false;
-    //     $scope.contactFormUrl = "";
-    // }
-    //
-    // $scope.deleteContact = function(contactId) {
-    //     Contacts.deleteContact(contactId);
-    // }
+
+    $scope.contacts = contacts.data;
+    // $rootScope.contacts = contacts.data;
+     var refresh = function() {
+         // $scope.contacts = Contacts.getContacts().data;
+         $http.get("/contacts").
+             then(function(response) {
+             $scope.contacts = response.data;
+
+             }, function(response) {
+                 alert("Error finding contacts.");
+             });
+     };
+
+    refresh();
+
+    $scope.saveContact = function(contact) {
+        Contacts.createContact(contact);
+        refresh();
+    };
+    $scope.deleteContact = function(contactId) {
+        Contacts.deleteContact(contactId);
+        refresh();
+    };
+    $scope.editContact = function(contact) {
+        console.log(contact);
+        Contacts.getContact(contact._id).then(function(doc) {
+            Contacts.editContact(contact);
+        }, function(response) {
+            alert(response);
+        });
+    }
 
 })
-myapp.controller("loginWithFacebookController", function($q, $scope, facebookService) {
+myapp.controller("loginWithFacebookController", function($q, $scope, $routeParams,facebookService,Contacts) {
+    // $scope.logInMode = false;
+    // $scope.logInFormUrl = "";
+    // $("#loginForm").css('display','block');
+
+    // $scope.logInMode = true;
+    // $scope.logInFormUrl = "login.html";
+    Contacts.getContact($routeParams.contactId).then(function(doc) {
+        $scope.contact = doc.data;
+    }, function(response) {
+        alert(response);
+    });
+
 
 
     function statusChangeCallback(response) {
+
+        // $("#loginForm").css('display','block');
+        //
+        // $scope.logInMode = true;
+        // $scope.logInFormUrl = "login.html";
+
+
         console.log('statusChangeCallback');
         console.log(response);
         // The response object is returned with a status field that lets the
@@ -56,6 +68,9 @@ myapp.controller("loginWithFacebookController", function($q, $scope, facebookSer
         // Full docs on the response object can be found in the documentation
         // for FB.getLoginStatus().
         if (response.status === 'connected') {
+            $scope.logInMode = false;
+            $scope.logInFormUrl = "";
+
             // Logged into your app and Facebook.
             console.log('Successful login for: ');
             FB.login(function(response) {
@@ -112,14 +127,27 @@ myapp.controller("loginWithFacebookController", function($q, $scope, facebookSer
             // if (typeof resp !== 'undefined') {
             // console.log('undefined');            }
         } else if (response.status === 'not_authorized') {
+            $scope.logInMode = true;
+            $scope.logInFormUrl = "login.html";
+
             // The person is logged into Facebook, but not your app.
             console.log('Please log ' +
                 'into this app.');
         } else {
             // The person is not logged into Facebook, so we're not sure if
             // they are logged into this app or not.
-            console.log('Please log ' +
+            // $scope.state = !$scope.state;
+            //  $("#loginForm").css('display','block');
+
+            $scope.logInMode = true;
+            $scope.logInFormUrl = "login.html";
+
+
+            alert('Please log ' +
                 'into Facebook.');
+
+
+
         }
     }
 

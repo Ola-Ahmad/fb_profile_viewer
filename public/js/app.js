@@ -1,58 +1,49 @@
 var myapp = angular.module("contactsApp", ['ngRoute']);
 
-window.fbAsyncInit = function() {
-    FB.init({
-        appId: '899782363404518',
-        cookie: true, // enable cookies to allow the server to access
-
-        xfbml: true,
-        version: 'v2.8'
-    });
-};
-
-(function(d, s, id) {
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) {
-        return;
-    }
-    js = d.createElement(s);
-    js.id = id;
-    js.src = "//connect.facebook.net/en_US/sdk.js";
-    fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));
-
+// window.fbAsyncInit = function() {
+//     FB.init({
+//         appId: '899782363404518',
+//         cookie: true, // enable cookies to allow the server to access
+//
+//         xfbml: true,
+//         version: 'v2.8'
+//     });
+// };
+//
+// (function(d, s, id) {
+//     var js, fjs = d.getElementsByTagName(s)[0];
+//     if (d.getElementById(id)) {
+//         return;
+//     }
+//     js = d.createElement(s);
+//     js.id = id;
+//     js.src = "//connect.facebook.net/en_US/sdk.js";
+//     fjs.parentNode.insertBefore(js, fjs);
+// }(document, 'script', 'facebook-jssdk'));
+//
 
 myapp.config(function($routeProvider, $locationProvider) {
     $routeProvider
         .when("/", {
             templateUrl: "list.html",
-            controller: "ListController",
+            controller: "mainController",
             resolve: {
                 contacts: function(Contacts) {
                     return Contacts.getContacts();
                 }
             }
         })
-        .when("/new/contact", {
-            controller: "NewContactController",
-           templateUrl: "contact-form.html"
-        })
-        .when("/contact/:contactId", {
-            controller: "EditContactController",
-            templateUrl: "contact.html"
-        })
-        .when("/login", {
+        .when("/login/:contactId", {
             controller: "loginWithFacebookController",
             templateUrl: "fbprofile.html"
         })
         .otherwise({
             redirectTo: "/"
         })
-    // use the HTML5 History API
     $locationProvider
         .html5Mode(false)
         .hashPrefix('!');
-
+    // use the HTML5 History API
     // .html5Mode(true)
     // .hashPrefix('!');
 
@@ -111,7 +102,6 @@ myapp.service("Contacts", function($http) {
             return response;
         }, function(response) {
             console.log(response);
-
             alert("Error deleting this contact.");
         });
     }
@@ -139,51 +129,6 @@ myapp.factory('facebookService', function($q) {
 
 })
 
-myapp.controller("ListController", function(contacts,Contacts, $scope,$rootScope,$location) {
-
-    // $scope.contacts =  Contacts.getContacts();
-
-    $scope.contacts = contacts.data;
-    // $rootScope.contacts = contacts.data;
-   //  var refresh = function() {
-   //
-   //      $scope.contacts = contacts.data;
-   //      // $scope.contacts = Contacts.getContacts();
-   //     // $scope.contacts={};
-   //  };
-   //
-   // refresh();
-
-
-
-    $scope.saveContact = function(contact) {
-        Contacts.createContact(contact);
-        // refresh();
-    }
-    $scope.deleteContact = function(contactId) {
-        Contacts.deleteContact(contactId);
-       // refresh();
-    }
-    $scope.editContact = function(contact) {
-    console.log(contact);
-        Contacts.getContact(contact._id).then(function(doc) {
-          //  $scope.cont = doc.data;
-
-            Contacts.editContact(contact);
-
-        }, function(response) {
-            alert(response);
-        });
-
-           // Contacts.editContact($scope.cont);
-
-            // Contacts.getContact(contact);
-       // console.log(contact);
-       // refresh();
-
-    }
-
-})
 
 //
 //     // .run(['$rootScope', '$window',

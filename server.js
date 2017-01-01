@@ -22,7 +22,7 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 //app.use(bodyParser.urlencoded({ extended: false }));
 // app.use(cookieParser());
-app.use(express.static(path.join(__dirname,'public')));
+app.use(express.static(path.join(__dirname, 'public')));
 // app.use('/', index);
 // app.use('/contacts', contacts);
 // app.use('/contacts/:id', contact);
@@ -48,7 +48,7 @@ app.use(express.static(path.join(__dirname,'public')));
 let db;
 // Connect to the database before starting the application server.
 // let url  = "mongodb://admin:olaeng3loosh@ds145128.mlab.com:45128/fb_profile_viewer_db"
-mongodb.MongoClient.connect(process.env.MONGOLAB_URI  , function (err, database) {
+mongodb.MongoClient.connect(process.env.MONGOLAB_URI, function(err, database) {
     if (err) {
         console.log(err);
         process.exit(1);
@@ -65,7 +65,9 @@ mongodb.MongoClient.connect(process.env.MONGOLAB_URI  , function (err, database)
 // Generic error handler used by all endpoints.
 function handleError(res, reason, message, code) {
     console.log("ERROR: " + reason);
-    res.status(code || 500).json({"error": message});
+    res.status(code || 500).json({
+        "error": message
+    });
 }
 /*  "/contacts"
  *    GET: finds all contacts
@@ -86,13 +88,13 @@ app.get("/contacts", function(req, res) {
 });
 
 app.post("/contacts", function(req, res) {
-console.log('in server POST');
+    console.log('in server POST');
     console.log(req.body);
 
     let newContact = req.body;
-   newContact.createDate = new Date();
-   //newContact.name='ola';
-    console.log( newContact);
+    newContact.createDate = new Date();
+    //newContact.name='ola';
+    console.log(newContact);
 
 
     // if (!(req.body.fullName)) {
@@ -102,14 +104,14 @@ console.log('in server POST');
         if (err) {
             handleError(res, err.message, "Failed to create new contact.");
         } else {
-          // res.status(201).json(doc.ops[0]);
+            // res.status(201).json(doc.ops[0]);
             console.log(doc.ops[0]);
-           res.status(201).json(doc.ops[0]);
+            res.status(201).json(doc.ops[0]);
         }
     });
     // res.send('in server POST');
 
-   // res.send(newContact);
+    // res.send(newContact);
 });
 
 /*  "/contacts/:id"
@@ -119,7 +121,9 @@ console.log('in server POST');
  */
 
 app.get("/contacts/:id", function(req, res) {
-    db.collection(CONTACTS_COLLECTION).findOne({ _id: new ObjectID(req.params.id) }, function(err, doc) {
+    db.collection(CONTACTS_COLLECTION).findOne({
+        _id: new ObjectID(req.params.id)
+    }, function(err, doc) {
         if (err) {
             handleError(res, err.message, "Failed to get contact");
         } else {
@@ -132,7 +136,9 @@ app.put("/contacts/:id", function(req, res) {
     var updateDoc = req.body;
     delete updateDoc._id;
 
-    db.collection(CONTACTS_COLLECTION).updateOne({_id: new ObjectID(req.params.id)}, updateDoc, function(err, doc) {
+    db.collection(CONTACTS_COLLECTION).updateOne({
+        _id: new ObjectID(req.params.id)
+    }, updateDoc, function(err, doc) {
         if (err) {
             handleError(res, err.message, "Failed to update contact");
         } else {
@@ -145,9 +151,11 @@ app.put("/contacts/:id", function(req, res) {
 });
 app.delete("/contacts/:id", function(req, res) {
     console.log(req.params.id);
-    db.collection(CONTACTS_COLLECTION).deleteOne({_id: new ObjectID(req.params.id)}, function(err, result) {
+    db.collection(CONTACTS_COLLECTION).deleteOne({
+        _id: new ObjectID(req.params.id)
+    }, function(err, result) {
         if (err) {
-            handleError(res, err.message , "Failed to delete contact");
+            handleError(res, err.message, "Failed to delete contact");
         } else {
             res.status(204).end();
         }
@@ -193,9 +201,9 @@ function onError(error) {
     if (error.syscall !== 'listen') {
         throw error;
     }
-    let bind = typeof port === 'string'
-        ? 'Pipe ' + port
-        : 'Port ' + port;
+    let bind = typeof port === 'string' ?
+    'Pipe ' + port :
+    'Port ' + port;
 
     // handle specific listen errors with friendly messages
     switch (error.code) {
@@ -216,9 +224,9 @@ function onError(error) {
  */
 function onListening() {
     let addr = server.address();
-    let bind = typeof addr === 'string'
-        ? 'pipe ' + addr
-        : 'port ' + addr.port;
-    console.log('Example app listening on:'+bind);
+    let bind = typeof addr === 'string' ?
+    'pipe ' + addr :
+    'port ' + addr.port;
+    console.log('Example app listening on:' + bind);
     debug('Listening on ' + bind);
 }

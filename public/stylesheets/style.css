@@ -11,6 +11,8 @@
 html, body {
     width:100%;
     box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+
 }
 
 body {
@@ -26,15 +28,19 @@ body {
     /*min-width: 900px;*/
 }
 
+
+#logIn{
+    display: none;
+}
 label {
     /*position: absolute;*/
+    padding: 2px;
     transform: translateY(6px);
     left: 13px;
-    color:cadetblue;
-
+    /*color:black;*/
     transition: all 0.25s ease;
     pointer-events: none;
-    font-size: 22px;
+    font-size: 16px;
 }
 label .req {
     margin: 2px;
@@ -57,10 +63,9 @@ input{
     font-size: 22px;
     display: block;
     width: 100%;
-    height: 100%;
+    /*height: 100%;*/
     padding: 5px 10px;
     background: none;
-    background-image: none;
     border: 1px solid #6CF;
     color: #ffffff;
     border-radius: 0;
@@ -71,41 +76,47 @@ input:focus {
     border-color:#00F;
 }
 
-.form{
-    background:#618CB8;
-    padding: 40px;
-    max-width: 600px;
-    margin: 40px auto;
+form{
+    /*background:#618CB8;*/
+    padding:20px;
+    max-width: 500px;
+    margin: 10px 10px;
     border-radius: 4px;
     box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
 }
+.form-group ,.form-control{
+    margin-bottom:15px !important;
+    display: block !important;
+    width: 100% !important;;
+}
 
-
-.button, .btn{
+.btn {
     /*height: 100%;*/
-    padding: 15px 0;
+    padding: 15px 10px;
     font-size: 2rem;
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: .1em;
-    background: #6CF;
+    background: #337ab7;
     color: #000000;
+    border-color: transparent;
 }
-.button:hover, .button:focus {
-    background: #00F;
+.btn:hover, .btn:focus {
+    background: #337ac1;
 }
 
 .modal-content {
-    color: orange ;
+    color: #337ab7 ;
     background-color: #222 !important;
 
 }
 .modal-header {
-    border-bottom-color: #8a6d3b;
+    border-bottom-color: #337ab7;
 
 }
 .modal-footer {
-    border-top-color: #8a6d3b;
+    border-top-color: #337ab7;
+    /*border-top-color: #8a6d3b;*/
 
 }
 .glyphicon-plus  {
@@ -117,15 +128,16 @@ input:focus {
 
 a:hover{
     text-decoration: none;
-    color: #8a6d3b;
+    color: #00F;
+
 }
 .a-icon:hover,.a-icon:active{
     text-decoration: none;
-    color: #8a6d3b;
+    color: #00F;
 
 }
 .a-icon[tabindex]:focus {
-    color: #8a6d3b;
+    color: #00F;
     outline: none;
 }
 
@@ -139,32 +151,32 @@ li {
 }
 
  .navbar-default {
-    background-color: cadetblue;
+    background-color: #337ab7;
     border-color: #1b6d85;
 }
 .navbar-default .navbar-brand{
     font-size: large;
     font-weight: 600;
-    color:blanchedalmond;
+    color:whitesmoke;
 }
 .navbar-default .navbar-nav > .active > a{
     /*color:aliceblue;*/
-    background-color: #1b6d85;
+    background-color: #337ab7;
     text-decoration: none;
 }
 .navbar-default .navbar-nav > .active > a:hover{
     /*background-color: #2b98f3;*/
-    background-color: #1b6d90;
+    background-color: #337ab7;
 
     text-decoration: none;
 }
 
 .panel-success  {
-    border-color:#1b6d85;
+    border-color:#337ab7;
     color: #0f0f0f;
 }
 .panel-success .panel-heading{
-    background-color:cadetblue;
+    background-color:#337ab7;
     color:beige;;
 
 }
@@ -210,8 +222,13 @@ hr{
     border-radius: 2px;
     width:250px;
 }
+.viewFB{
+    width:250px;
+
+}
 
 .ra-name , .ra-birthday ,.ra-gender ,.ra-email,.ra-location{
+    font-size: 1.3em;
     display: block;
     margin-top: 0.8571em;
 }

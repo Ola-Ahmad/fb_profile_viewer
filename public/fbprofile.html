@@ -1,110 +1,119 @@
-
-
-
-<div class = "row">
-    <div class="col-xs-12 " >
-        <a class="btn btn-default pull-right" style="margin-bottom: 2%" href=index.html#!/">Back</a></p>
+<div id="loginForm" style="display: none" class="row">
+    <!-- logIn form -->
+    <div ng-include="logInFormUrl">
+        <div class="col-xs-3"></div>
+        <div class="col-xs-6">
+            <h1>Please login to facebook </h1>
+            <fb:login-button scope="public_profile,email,user_work_history,user_about_me,user_birthday,user_education_history" onlogin="checkLoginState();"> </fb:login-button>
+            <div id="status"> </div>
+        </div>
+        <div class="col-xs-3"></div>
     </div>
 </div>
-<div class="row ">
-    <div class="col-xs-12">
 
-        <div  class="panel panel-success">
-            <div class="panel-heading">
-                <h3 class="panel-title">Profile</h3>
-            </div>
-            <div class="panel-body">
-                <div class="row clearfix">
-                    <div class="col-lg-12">
-                        <section id="profile" class="well">
-                            <div class="row">
-                                <div class="col-lg-5 col-sm-2">
-                                    <img ng-if="url"  src="{{url}}" class="ra-avatar img-responsive" />
+<div ng-hide="logInMode">
+    <div class="row">
+        <div class="col-xs-12 ">
+            <a class=" pull-right" style="margin-bottom: 2%" href=index.html#!/ ">
+
+                <i class="fa fa-arrow-circle-o-right fa-4x " aria-hidden="true "></i>
+            </a>
+        </div>
+    </div>
+    <div class="row ">
+        <div class="col-xs-12 ">
+
+            <div  class="panel panel-success ">
+                <div class="panel-heading ">
+                    <h3 class="panel-title ">Profile</h3>
+                </div>
+                <div class="panel-body ">
+                    <div class="row clearfix ">
+                        <div class="col-lg-12 ">
+                            <section id="profile " class="well ">
+                                <div class="row ">
+                                    <div class="col-lg-5 col-sm-2 ">
+                                        <img ng-if="url "  src="{{url}} " class="ra-avatar img-responsive " />
+                                        <a role="button" class="viewFB btn btn-default" href=' {{ contact.facebookURL}}' target='_blank'>View Profile</a>
+                                    </div>
+                                    <div class="col-lg-7 col-sm-2 ">
+                                        <span class="ra-name "  ng-if="name " > name:{{ name }}</span>
+                                        <span class="ra-email "  ng-if="email " > email:{{ email }}</span>
+                                        <span class="ra-birthday " ng-if="birthday "> birthday : {{ birthday }}</span>
+                                        <span  class="ra-gender " ng-if="gender " > gender: {{ gender }}</span>
+                                        <span class="ra-location " ng-if="location "> location : {{ location }}</span>
+                                    </div>
                                 </div>
-                                <div class="col-lg-7 col-sm-2">
-                                    <span class="ra-name "  ng-if="name" > name:{{ name }}</span>
-                                    <span class="ra-email "  ng-if="email" > email:{{ email }}</span>
-                                    <span class="ra-birthday " ng-if="birthday"> birthday : {{ birthday }}</span>
-                                    <span  class="ra-gender" ng-if="gender" > gender: {{ gender }}</span>
-                                    <span class="ra-location " ng-if="location"> location : {{ location }}</span>
-                                </div>
-                            </div>
-                        </section>
+                            </section>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-<div class="row">
-    <div class="col-xs-12">
+    <div class="row ">
+        <div class="col-xs-12 ">
 
-        <div class="panel panel-success">
-            <div class="panel-heading">
-                <h3 class="panel-title">Education</h3>
-            </div>
-            <div class="panel-body">
-                <!--<span class="ra-birthday " ng-if="education">  {{ education }}</span>-->
+            <div class="panel panel-success ">
+                <div class="panel-heading ">
+                    <h3 class="panel-title ">Education</h3>
+                </div>
+                <div class="panel-body ">
+                    <!--<span class="ra-birthday " ng-if="education ">  {{ education }}</span>-->
 
-                <ul ng-repeat="edu in education">
-                    <li ng-repeat="shType in shcoolType">
-                        <h2>{{ shType }}</h2>
-                    </li>
-                    <li ng-repeat="shName in shcoolName">
-                        <h3>{{ shName }}</h3>
+                    <ul ng-repeat="edu in education ">
+                        <li ng-repeat="shType in shcoolType ">
+                            <h2>{{ shType }}</h2>
+                        </li>
+                        <li ng-repeat="shName in shcoolName ">
+                            <h3>{{ shName }}</h3>
 
-                    </li>
-
+                        </li>
 
 
-                </ul>
 
+                    </ul>
+
+
+                </div>
 
             </div>
 
         </div>
 
     </div>
+    <div class="row ">
+        <div class="col-xs-12 ">
+            <div class="panel panel-success ">
 
-</div>
-<div class="row">
-    <div class="col-xs-12">
-        <div class="panel panel-success">
+                <div class="panel-heading ">
+                    <h3 class="panel-title ">Work history</h3>
+                </div>
+                <div class="panel-body ">
+                    <!--<span class="ra-birthday " ng-if="work "> birthday : {{ work }}</span>-->
 
-            <div class="panel-heading">
-                <h3 class="panel-title">Work history</h3>
-            </div>
-            <div class="panel-body">
-                <!--<span class="ra-birthday " ng-if="work"> birthday : {{ work }}</span>-->
+                    <ul ng-repeat="work in work ">
 
-                <ul ng-repeat="work in work">
+                        <li ng-repeat="emp in employerName ">
+                            <h2>{{ emp }}</h2>
+                        </li>
+                        <li ng-repeat="loc in jobLocation ">
+                            <h3>{{ loc }}</h3>
 
-                    <li ng-repeat="emp in employerName">
-                        <h2>{{ emp }}</h2>
-                    </li>
-                    <li ng-repeat="loc in jobLocation">
-                       <h3>{{ loc }}</h3>
+                        </li>
+                        <li ng-repeat="pos in jobPosition ">
+                            <h4>{{ pos }}</h4>
 
-                    </li>
-                    <li ng-repeat="pos in jobPosition">
-                        <h4>{{ pos }}</h4>
+                        </li>
 
-                    </li>
-
-                </ul>
-
-
-
-
-
-
-
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
+
 </div>
 
 
 
-
-
+</div>
