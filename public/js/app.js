@@ -77,23 +77,31 @@ myapp.service("Contacts", function($http) {
         });
     }
     this.getContact = function(contactId) {
+        console.log('Get contact function');
+
         var url = "/contacts/" + contactId;
         return $http.get(url).
         then(function(response) {
+            console.log(response);
             return response;
         }, function(response) {
             alert("Error finding this contact.");
         });
     }
     this.editContact = function(contact) {
+        console.log('edit contact function');
         var url = "/contacts/" + contact._id;
-        console.log(url);
+        //console.log(url);
         return $http.put(url, contact).
         then(function(response) {
+            console.log("Done editing");
+            console.log(response);
             return response;
+
         }, function(response) {
             alert("Error editing this contact.");
             console.log(response);
+            console.log('Error editing this contact');
         });
     }
     this.deleteContact = function(contactId) {
@@ -133,14 +141,21 @@ myapp.factory('facebookService', function($q) {
 
 myapp.controller("ListController", function(contacts,Contacts, $scope,$rootScope,$location) {
 
+    // $scope.contacts =  Contacts.getContacts();
+
     $scope.contacts = contacts.data;
     // $rootScope.contacts = contacts.data;
+   //  var refresh = function() {
+   //
+   //      $scope.contacts = contacts.data;
+   //      // $scope.contacts = Contacts.getContacts();
+   //     // $scope.contacts={};
+   //  };
+   //
+   // refresh();
 
-    var refresh = function() {
 
-        $scope.contacts =  Contacts.getContacts();
 
-    };
     $scope.saveContact = function(contact) {
         Contacts.createContact(contact);
         // refresh();
@@ -150,8 +165,20 @@ myapp.controller("ListController", function(contacts,Contacts, $scope,$rootScope
        // refresh();
     }
     $scope.editContact = function(contact) {
-        Contacts.editContact(contact);
-        console.log(contact);
+    console.log(contact);
+        Contacts.getContact(contact._id).then(function(doc) {
+          //  $scope.cont = doc.data;
+
+            Contacts.editContact(contact);
+
+        }, function(response) {
+            alert(response);
+        });
+
+           // Contacts.editContact($scope.cont);
+
+            // Contacts.getContact(contact);
+       // console.log(contact);
        // refresh();
 
     }

@@ -4,10 +4,10 @@
 
 
 myapp.controller("NewContactController", function($scope, $location, Contacts) {
-    $scope.back = function() {
-        $location.path("/");
-    }
-
+    // $scope.back = function() {
+    //     $location.path("/");
+    // }
+    //
     // $scope.saveContact = function(contact) {
     //     Contacts.createContact(contact).then(function(doc) {
     //         var contactUrl = "/contact/" + doc.data._id;
@@ -29,10 +29,10 @@ myapp.controller("EditContactController", function($scope, $routeParams, Contact
     //     $scope.contactFormUrl = "contact-form.html";
     // }
     //
-    $scope.back = function() {
-        $scope.editMode = false;
-        $scope.contactFormUrl = "";
-    }
+    // $scope.back = function() {
+    //     $scope.editMode = false;
+    //     $scope.contactFormUrl = "";
+    // }
     //
     // $scope.saveContact = function(contact) {
     //     Contacts.editContact(contact);

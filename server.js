@@ -105,7 +105,6 @@ console.log('in server POST');
           // res.status(201).json(doc.ops[0]);
             console.log(doc.ops[0]);
            res.status(201).json(doc.ops[0]);
-
         }
     });
     // res.send('in server POST');
@@ -138,6 +137,9 @@ app.put("/contacts/:id", function(req, res) {
             handleError(res, err.message, "Failed to update contact");
         } else {
             res.status(204).end();
+            // res.status(204).json(doc);
+            // res.status(204).json(doc.ops[0]);
+
         }
     });
 });

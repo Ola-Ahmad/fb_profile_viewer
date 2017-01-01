@@ -38,11 +38,13 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="fburl">Facebook profile url </label>
-                                        <input id="fburl" name ="fburl" class="form-control" type="text" ng-model="contact.facebookURL" autocomplete="" required>
+                                        <input id="fburl" name ="fburl" class="form-control" type="text"
+                                               ng-model="contact.facebookURL" autocomplete="" required>
                                     </div>
                                     <div class="form-group">
                                         <label for="fbid">Facebook profile ID </label>
-                                        <input id="fbid"  name="fbid" class="form-control" type="number" autocomplete  ng-model="contact.facebookID" required>
+                                        <input id="fbid"  name="fbid" class="form-control" type="number" autocomplete
+                                               ng-model="contact.facebookID" required>
                                     </div>
                                     <button  type="submit" class="btn btn-default" >Save</button>
                                     <!--<button  type="button" class="btn btn-default" ng-click="saveContact(contact)">Save</button>-->
@@ -107,7 +109,7 @@
 
                     </td>
                     <td>
-                        <a href='#: facebookURL #'  target='_blank'>{{ contact.facebookURL}}</a>
+                        <a href=' {{ contact.facebookURL}}'  target='_blank'>{{ contact.facebookURL}}</a>
                     </td>
                     <td>
                         <div class="row" ng-hide="contact._id"></div>
@@ -164,11 +166,13 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="upfburl">Facebook profile url </label>
-                                        <input id="upfburl" name ="fburl" class="form-control" type="text" ng-model="contact.facebookURL" autocomplete="" required>
+                                        <input id="upfburl" name ="fburl" class="form-control" type="text"
+                                               ng-model="contact.facebookURL" autocomplete="" required>
                                     </div>
                                     <div class="form-group">
                                         <label for="upfbid">Facebook profile ID </label>
-                                        <input id="upfbid"  name="fbid" class="form-control" type="number" autocomplete  ng-model="contact.facebookID" required>
+                                        <input id="upfbid"  name="fbid" class="form-control" type="number" autocomplete
+                                               ng-model="contact.facebookID" required>
                                     </div>
                                     <button  type="submit" class="btn btn-default" >Save</button>
                                     <!--<button  type="button" class="btn btn-default" ng-click="saveContact(contact)">Save</button>-->
@@ -200,12 +204,12 @@
 
 
 
-<!--<div class="row" id="usersGrid">-->
-    <!--<div class="col-xs-12">-->
-        <!--<div class="table-responsive" id="contacts-grid"></div>-->
+<div class="row" id="usersGrid">
+    <div class="col-xs-12">
+        <div class="table-responsive" id="contacts-grid"></div>
 
-    <!--</div>-->
-<!--</div>-->
+    </div>
+</div>
 
 
-<!--<script src="/js/kendoGrid.js"></script>-->
+<script src="/js/kendoGrid.js"></script>
