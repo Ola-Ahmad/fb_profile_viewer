@@ -72,6 +72,9 @@ function handleError(res, reason, message, code) {
  *    POST: creates a new contact
  */
 app.get("/contacts", function(req, res) {
+    console.log('in server GET');
+    //console.log(req.body);
+
     db.collection(CONTACTS_COLLECTION).find({}).toArray(function(err, docs) {
         if (err) {
             handleError(res, err.message, "Failed to get contacts.");
@@ -79,22 +82,35 @@ app.get("/contacts", function(req, res) {
             res.status(200).json(docs);
         }
     });
+
 });
 
 app.post("/contacts", function(req, res) {
-    let newContact = req.body;
-    newContact.createDate = new Date();
+console.log('in server POST');
+    console.log(req.body);
 
-    if (!(req.body.fullName)) {
-        handleError(res, "Invalid user input", "Must provide a first or last name.", 400);
-    }
+    let newContact = req.body;
+   newContact.createDate = new Date();
+   //newContact.name='ola';
+    console.log( newContact);
+
+
+    // if (!(req.body.fullName)) {
+    //     handleError(res, "Invalid user input", "Must provide a first or last name.", 400);
+    // }
     db.collection(CONTACTS_COLLECTION).insertOne(newContact, function(err, doc) {
         if (err) {
             handleError(res, err.message, "Failed to create new contact.");
         } else {
-            res.status(201).json(doc.ops[0]);
+          // res.status(201).json(doc.ops[0]);
+            console.log(doc.ops[0]);
+           res.status(201).json(doc.ops[0]);
+
         }
     });
+    // res.send('in server POST');
+
+   // res.send(newContact);
 });
 
 /*  "/contacts/:id"
@@ -126,9 +142,10 @@ app.put("/contacts/:id", function(req, res) {
     });
 });
 app.delete("/contacts/:id", function(req, res) {
+    console.log(req.params.id);
     db.collection(CONTACTS_COLLECTION).deleteOne({_id: new ObjectID(req.params.id)}, function(err, result) {
         if (err) {
-            handleError(res, err.message, "Failed to delete contact");
+            handleError(res, err.message , "Failed to delete contact");
         } else {
             res.status(204).end();
         }

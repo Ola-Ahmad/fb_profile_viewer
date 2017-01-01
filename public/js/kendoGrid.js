@@ -1,43 +1,133 @@
 /**
  * Created by Hp on 29/12/2016.
  */
-$(document).ready(function () {
-    $("#contacts-grid").kendoGrid({
-        dataSource: {
+
+function createRow() {
+    
+}
+
+$(document).ready(function() {
+
+
+
+
+
+    let dataSource = new kendo.data.DataSource({
             transport: {
                 read: {
-                    url: "https://api.mlab.com/api/1/databases/fb_profile_viewer_db/collections/contacts?f={%22_id%22:1,%22fullName%22:1,%22facebookID%22:1,%22facebookURL%22:1}&apiKey=hoKcMVDx6ezkYACMw2sveutGpmVadzdF",
-                    dataType: "json"
+                    //get data using Mlan API
+                    // url: "https://api.mlab.com/api/1/databases/fb_profile_viewer_db/collections/contacts?f={%22_id%22:1,%22fullName%22:1,%22facebookID%22:1,%22facebookURL%22:1}&apiKey=hoKcMVDx6ezkYACMw2sveutGpmVadzdF",
+                    //getting data using my API that usees node.js driver to connect with mlab
+                    url:"/contacts",
+                    type:"GET"
+
                 },
-                create: {
-                    // url:"" ,
-//                        dataType: "jsonp"
+                    create: {
+                    url: "/contacts",
+                    //  data:models ,
+                    type: "POST",
+                       // data: $("#contacts-grid").data("kendoGrid"),
+
+    // data: {
+                    //
+                    //     fullName: "Ola Ahmad2",
+                    //     facebookURL: "https://www.facebook.com/OlaAhmad93",
+                    //     facebookID: 1571226526430098
+                    //
+                    //
+                    //     // contentType: "application/json"
+                    //     // dataType: "jsonp"
+                    //
+                    // }
                 },
-                parameterMap: function(options, operation) {
-                    if (operation !== "read" && options.models) {
-                        return {models: kendo.stringify(options.models)};
+                    update: {
+                        url: "/contacts",
+                        //  data:models ,
+                        type: "POST",
+                        // data: {
+                        //
+                        //     "fullName": "Ola Ahmad2",
+                        //     "facebookURL": "https://www.facebook.com/OlaAhmad93",
+                        //     "facebookID": 1571226526430098,
+                        //
+                        //
+                        //     // contentType: "application/json"
+                        //     // dataType: "jsonp"
+                        //
+                        // }
+
+                    },
+                    destroy: {
+                        // url:saveContact(options) ,
+                        // dataType: "jsonp"
+                    },
+                    parameterMap: function(data, operation) {
+                        console.log('operation: '+operation);
+                        console.log('data.models: '+data.models);
+                        // if (operation !== "read" && data.models) {
+                        //     return {
+                        //         models: kendo.stringify(data.models)
+                        //
+                        //     };
+                        // }
+                        if (operation == "create") {
+                            // send the created data items as the "models" service parameter encoded in JSON
+
+                            return {models: kendo.stringify(data.models)};
+                        }
                     }
-                }
+
             },
-            // batch: true,
+            batch: false,
             pageSize: 5,
             // serverPaging: true,
             // serverSorting: true,
             // serverFiltering: true,
             schema: {
+               // errors: "Errors",
                 model: {
-                    id: "_id.$oid",
+                    // id: ["_id.$oid"],
+                    id:"facebookID",
                     fields: {
-                        "_id.$oid": { editable: false, nullable: true },
-                        fullName: { type: "string",defaultValue: 'Name',validation: { required: true } },
-                        facebookURL: {type: "string", defaultValue:'facebook.com', validation: { required: true} },
-                        facebookID: {  type: "number", defaultValue:0,validation: { min: 0, required: true }
+                        // "_id.$oid": {
+                        //     editable: false,
+                        //     nullable: true
+                        // },
+                        fullName: {
+                            type: "string",
+                            defaultValue: 'Name',
+                            validation: {
+                                required: true
+                            }
+                        },
+                        facebookURL: {
+                            type: "string",
+                            defaultValue: 'facebook.com',
+                            validation: {
+                                required: true
+                            }
+                        },
+                        facebookID: {
+                            type: "number",
+                            defaultValue: 0,
+                            validation: {
+                                min: 0,
+                                required: true
+                            }
                         }
                     }
                 }
-            }
-        },
-        scrollable: false,
+            },
+        // error: function(e) {
+        //         if (e.errors) {
+        //             alert(e.errors);
+        //         }
+        //     },
+
+    });
+        $("#contacts-grid").kendoGrid({
+            dataSource: dataSource,
+            scrollable: false,
         sortable: true,
         // groupable: true,
         pageable: {
@@ -49,15 +139,23 @@ $(document).ready(function () {
 
         },
         toolbar: ["create"],
+
+
+
+
+
+
+
+
         columns: [
-//                    {
-//                        field: ["_id.$oid"],
-//                        title: "ID",
-//                        width: 240
-//
-//                    },
+            //                    {
+            //                        field: ["_id.$oid"],
+            //                        title: "ID",
+            //                        width: 240
+            //
+            //                    },
             {
-                template:"<a class='loginbtn' href='index.html\\#!/login'>#: fullName #</a>",
+                template: "<a class='loginbtn' href='index.html\\#!/login'>#: fullName #</a>",
                 // template:"<a class='loginbtn' href='#'>#: fullName #</a>",
 
                 field: "fullName",
@@ -69,8 +167,8 @@ $(document).ready(function () {
                     }
                 }
 
-                }, {
-                template:"<a href='#: facebookURL #'  target='_blank'> #: facebookURL # </a>",
+            }, {
+                template: "<a href='#: facebookURL #'  target='_blank'> #: facebookURL # </a>",
                 field: "facebookURL",
                 title: "Facebook profile URL",
                 width: "30%",
@@ -92,9 +190,10 @@ $(document).ready(function () {
                     }
                 }
 
-            } ,
+            },
             {
-                command: ["edit","destroy"], title: "&nbsp;",
+                command: ["edit", "destroy"],
+                title: "&nbsp;",
                 width: "20%"
 
             }
@@ -107,13 +206,13 @@ $(document).ready(function () {
             //     title: "&nbsp;",
             //     width: "20%"
             // }]}
-            ],
+        ],
         editable: "inline"
     });
 
 
-
-
-
+    // function setDataSource() {
+    //     $("#grid").data("kendoGrid").dataSource.read();
+    // }
 
 });

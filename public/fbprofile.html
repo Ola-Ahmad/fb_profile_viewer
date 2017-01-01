@@ -44,36 +44,27 @@
                 <h3 class="panel-title">Education</h3>
             </div>
             <div class="panel-body">
+                <!--<span class="ra-birthday " ng-if="education">  {{ education }}</span>-->
+
+                <ul ng-repeat="edu in education">
+                    <li ng-repeat="shType in shcoolType">
+                        <h2>{{ shType }}</h2>
+                    </li>
+                    <li ng-repeat="shName in shcoolName">
+                        <h3>{{ shName }}</h3>
+
+                    </li>
 
 
-                <!--<div >-->
-                    <!--<span class="ra-birthday " ng-repeat="(key, val) in education[0]">{{key}}</span>-->
-                <!--</div>-->
-                <!--<div ng-repeat="item in education">-->
-                    <!--<div ng-repeat="(key, val) in education">{{val}}-->
-                    <!--<span class="ra-birthday " ng-if="school">                    {{ item.school }}</span>-->
-                    <!--<span class="ra-birthday " ng-if="type">  {{ item.type }}</span>-->
-                    <!--<span class="ra-birthday " ng-if="id">  {{ item.id }}</span>-->
 
-                    <span class="ra-birthday " ng-if="education">  {{ education }}</span>
-                    <!--<span class="ra-birthday " ng-if="education">  {{ education.type }}</span>-->
+                </ul>
 
-                    <!--<span class="ra-birthday " ng-if="education">  {{ item.concentratio.name }}</span>-->
-
-                        <!--<span class="ra-birthday " ng-if="education"> {{ item.school.name }}</span>-->
-                    <!--<div ng-if="item.concentration" ng-repeat="item in item.concentration ">-->
-
-                        <!--<span class="ra-birthday " ng-if="education"> concentration :{{ item.name }}</span>-->
-
-                    </div>
-
-                    <!--</div>-->
-
-                </div>
 
             </div>
 
         </div>
+
+    </div>
 
 </div>
 <div class="row">
@@ -84,7 +75,30 @@
                 <h3 class="panel-title">Work history</h3>
             </div>
             <div class="panel-body">
-                <span class="ra-birthday " ng-if="work"> birthday : {{ work }}</span>
+                <!--<span class="ra-birthday " ng-if="work"> birthday : {{ work }}</span>-->
+
+                <ul ng-repeat="work in work">
+
+                    <li ng-repeat="emp in employerName">
+                        <h2>{{ emp }}</h2>
+                    </li>
+                    <li ng-repeat="loc in jobLocation">
+                       <h3>{{ loc }}</h3>
+
+                    </li>
+                    <li ng-repeat="pos in jobPosition">
+                        <h4>{{ pos }}</h4>
+
+                    </li>
+
+                </ul>
+
+
+
+
+
+
+
             </div>
         </div>
     </div>

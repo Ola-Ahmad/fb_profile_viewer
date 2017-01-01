@@ -1,44 +1,8 @@
 
-// document.getElementById('loginBtn').addEventListener('click', function() {
-//     //do the login
-//     FB.login(function(response) {
-//         if (response.authResponse) {
-//             //user just authorized your app
-//             top.location.href = 'example.com/facebook_connect.php';
-//         }
-//     }, {scope: 'email,public_profile', return_scopes: true});
-// },
-//     false
-// );
+$(document).ready(function() {
 
 
-
-
-
-// $(document).ready(function(){
-//
-//     ​$(".loginbtn").click(function () {
-//         //do the login
-//         FB.login(function(response) {
-//             if (response.authResponse) {
-//                 //user just authorized your app
-//                 top.location.href = 'example.com/facebook_connect.php';
-//             }
-//         }, {scope: 'email,public_profile', return_scopes: true});
-//
-//
-//     });​
-// });​
-// This function is called when someone finishes with the Login
-// Button.  See the onlogin handler attached to it in the sample
-// code below.
-// function checkLoginState() {
-
-
-$(document).ready(function () {
-
-
-    $('.loginbtn').click(function () {
+    $('.loginbtn').click(function() {
         FB.getLoginStatus(function(response) {
             console.log('getLoginStatus');
             statusChangeCallback(response);
@@ -60,7 +24,7 @@ function statusChangeCallback(response) {
     if (response.status === 'connected') {
         // Logged into your app and Facebook.
         // basicAPIRequest();
-        window.location='index.html#!/login';
+        window.location = 'index.html#!/login';
 
     } else if (response.status === 'not_authorized') {
         // The person is logged into Facebook, but not your app.
@@ -74,22 +38,3 @@ function statusChangeCallback(response) {
     }
 }
 
-
-// Here we run a very simple test of the Graph API after login is
-// successful.  See statusChangeCallback() for when this call is made.
-// function  basicAPIRequest() {
-    // console.log('Welcome!  Fetching your information.... ');
-    // FB.api('/me',
-    //     {fields: "id,name,birthday,gender,work,picture,education"},
-    //     function(response) {
-    //         console.log('Successful login for: ' + response.name);
-    //
-    //         console.log(response);
-    //
-    //     // document.getElementById('status').innerHTML =
-    //     //     'Thanks for logging in, ' + response.name + '!';
-    //     window.location='index.html#!/login';
-    // });
-
-
-// }
