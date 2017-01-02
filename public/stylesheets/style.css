@@ -66,7 +66,7 @@ input{
     /*height: 100%;*/
     padding: 5px 10px;
     background: none;
-    border: 1px solid #6CF;
+    border: 1px solid #337ac1;
     color: #ffffff;
     border-radius: 0;
     transition: border-color .25s ease, box-shadow .25s ease;
@@ -89,7 +89,10 @@ form{
     display: block !important;
     width: 100% !important;;
 }
-
+div.dataTables_wrapper div.dataTables_filter input{
+    display: inline-block !important;
+    width :auto !important;
+}
 .btn {
     /*height: 100%;*/
     padding: 15px 10px;

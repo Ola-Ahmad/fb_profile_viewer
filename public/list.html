@@ -1,3 +1,5 @@
+<script src="/js/list.js"></script>
+
 <div class="row ">
     <div class="col-xs-12">
         <div class="page-header ">
@@ -24,8 +26,8 @@
                                     <div class="col-xs-12">
                                         <form id="register_form" name="register_form" ng-submit="saveContact(contact)">
                                             <div class="form-group"> <label for="fname"> Full Name</label> <input id="fname" name="fname" class="form-control" type="text" ng-model="contact.fullName" autocomplete autofocus required ng-required="true"> </div>
-                                            <div class="form-group"> <label for="fburl">Facebook profile url </label> <input id="fburl" name="fburl" class="form-control" type="text" ng-model="contact.facebookURL" autocomplete="" required> </div>
-                                            <div class="form-group"> <label for="fbid">Facebook profile ID </label> <input id="fbid" name="fbid" class="form-control" type="number" autocomplete ng-model="contact.facebookID" required> </div> <button type="submit" class="btn btn-default">Save</button>
+                                            <div class="form-group"> <label for="fburl">Facebook profile url </label> <input id="fburl" name="fburl" class="form-control" type="url" ng-model="contact.facebookURL" autocomplete="" required> </div>
+                                            <div class="form-group"> <label for="fbid">Facebook profile ID </label> <input id="fbid" name="fbid" class="form-control" type="number" autocomplete ng-model="contact.facebookID" required  > </div> <button type="submit" class="btn btn-default">Save</button>
                                             <!--<button  type="button" class="btn btn-default" ng-click="saveContact(contact)">Save</button>-->
                                             <!--</div>-->
                                         </form>
@@ -42,7 +44,7 @@
 </div>
 <div class="row">
     <div class="col-xs-12">
-        <table id="UserList" class="table table-responsive table-hover    table-bordered" cellspacing="0" width="100%">
+        <table id="UserList" class="table table-responsive table-hover table-bordered" cellspacing="0" width="100%">
             <thead>
             <tr>
                 <th>Contact Name</th>
@@ -52,7 +54,15 @@
                 <th>&nbsp;</th>
             </tr>
             </thead>
-            <tfoot> </tfoot>
+            <tfoot>
+            <tr>
+            <th>&nbsp;</th>
+            <th>&nbsp;</th>
+            <th>&nbsp;</th>
+            <th>&nbsp;</th>
+            <th>&nbsp;</th>
+            </tr>
+            </tfoot>
             <tbody>
             <tr ng-repeat="contact in contacts | orderBy:'fullName'" style="cursor:pointer">
                 <td> <a class='loginbtn' href='index.html#!/login/{{contact._id}}'>{{ contact.fullName}}</a> </td>
@@ -60,52 +70,52 @@
                 <td> <a href=' {{ contact.facebookURL}}' target='_blank'>{{ contact.facebookURL}}</a> </td>
                 <td>
                     <!--<div class="row" ng-hide="contact._id"></div>-->
-                    <button type="button" class="icon-margin pull-right"  ng-click="deleteContact(contact._id)">
-                        <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
-                    </button>
+
+                        <button type="button" class="icon-margin pull-right"  ng-click="deleteContact(contact._id)">
+                            <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                        </button>
 
 
                     <!--<a href="" class="icon-margin pull-right " data-toggle="modal" data-target="#delete{{contact._id}}" rel="tooltip" title="Delete Album!">-->
-                        <!--<span class="glyphicon glyphicon-trash" aria-hidden="true"></span> </a>-->
+                    <!--<span class="glyphicon glyphicon-trash" aria-hidden="true"></span> </a>-->
 
                     <!--<div class="modal fade "  id="delete{{contact._id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">-->
-                        <!--<div class="modal-dialog" role="document">-->
-                            <!--<div class="modal-content">-->
-                                <!--<div class="modal-header"> <button type="button" class="close" data-dismiss="modal" aria-label="Close">-->
-                                    <!--<span aria-hidden="true">&times;</span></button>-->
-                                    <!--<h4 class="modal-title">Confirm Delete </h4>-->
-                                <!--</div>-->
-                                <!--<div class="modal-body">-->
+                    <!--<div class="modal-dialog" role="document">-->
+                    <!--<div class="modal-content">-->
+                    <!--<div class="modal-header"> <button type="button" class="close" data-dismiss="modal" aria-label="Close">-->
+                    <!--<span aria-hidden="true">&times;</span></button>-->
+                    <!--<h4 class="modal-title">Confirm Delete </h4>-->
+                    <!--</div>-->
+                    <!--<div class="modal-body">-->
 
-                                    <!--&lt;!&ndash;<form id="delete_form" name="delete_form"  ng-submit="deleteContact(contact._id)">&ndash;&gt;-->
-                                        <!--&lt;!&ndash;<div class="form-group">&ndash;&gt;-->
-                                            <!--<P>You are about to delete <i>'{{contact.fullName}} </i> account </P>-->
-                                            <!--<b>Do you want to proceed ?!</b>-->
-                                    <!--<button type="button" class="btn btn-default"  ng-click="deleteContact(contact._id)">Delete</button>-->
+                    <!--&lt;!&ndash;<form id="delete_form" name="delete_form"  ng-submit="deleteContact(contact._id)">&ndash;&gt;-->
+                    <!--&lt;!&ndash;<div class="form-group">&ndash;&gt;-->
+                    <!--<P>You are about to delete <i>'{{contact.fullName}} </i> account </P>-->
+                    <!--<b>Do you want to proceed ?!</b>-->
+                    <!--<button type="button" class="btn btn-default"  ng-click="deleteContact(contact._id)">Delete</button>-->
 
-                                        <!--&lt;!&ndash;</div>&ndash;&gt;-->
-                                        <!--&lt;!&ndash;<button type="submit" class="btn btn-default">Delete</button>&ndash;&gt;-->
-                                    <!--&lt;!&ndash;</form>&ndash;&gt;-->
-                                <!--</div>-->
-                                <!--<div class="modal-footer">-->
+                    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<button type="submit" class="btn btn-default">Delete</button>&ndash;&gt;-->
+                    <!--&lt;!&ndash;</form>&ndash;&gt;-->
+                    <!--</div>-->
+                    <!--<div class="modal-footer">-->
 
-                                    <!--<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>-->
+                    <!--<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>-->
 
-                                <!--</div>-->
-                            <!--</div>-->
-                        <!--</div>-->
+                    <!--</div>-->
+                    <!--</div>-->
+                    <!--</div>-->
                     <!--</div>-->
                 </td>
                 <td>
-                    <div class="pull-right ">
-                        <a href="" tabindex="1" class="a-icon icon-margin " data-toggle="modal" data-target="#edit{{contact._id}}" rel="tooltip" title="Update Description!">
+                        <a href="" tabindex="1" class="a-icon icon-margin pull-right" data-toggle="modal" data-target="#edit{{contact._id}}" rel="tooltip" title="Update Description!">
                             <span class="glyphicon glyphicon-edit" aria-hidden="true"></span> </a>
                         <div class="modal fade" id="edit{{contact._id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span></button>
+                                            <span aria-hidden="true">&times;</span></button>
                                         <h4 class="modal-title">Edit Album Description </h4>
                                     </div>
                                     <div class="modal-body">
@@ -114,8 +124,8 @@
                                                 <div class="col-xs-12">
                                                     <form id="update_form" name="update_form" ng-submit="editContact(contact)">
                                                         <div class="form-group"> <label for="upfname"> Full Name</label> <input id="upfname" name="upfname" class="form-control" type="text" ng-model="contact.fullName" autocomplete autofocus required ng-required="true"> </div>
-                                                        <div class="form-group"> <label for="upfburl">Facebook profile url </label> <input id="upfburl" name="upfburl" class="form-control" type="text" ng-model="contact.facebookURL" autocomplete="" required> </div>
-                                                        <div class="form-group"> <label for="upfbid">Facebook profile ID </label> <input id="upfbid" name="upfbid" class="form-control" type="number" autocomplete ng-model="contact.facebookID" required> </div> <button type="submit" class="btn btn-default">Save</button> </form>
+                                                        <div class="form-group"> <label for="upfburl">Facebook profile url </label> <input id="upfburl" name="upfburl" class="form-control" type="url" ng-model="contact.facebookURL" autocomplete="" required> </div>
+                                                        <div class="form-group"> <label for="upfbid">Facebook profile ID </label> <input id="upfbid" name="upfbid" class="form-control" type="number"   autocomplete ng-model="contact.facebookID" required> </div> <button type="submit" class="btn btn-default">Save</button> </form>
                                                 </div>
                                             </div>
                                         </div>
@@ -126,14 +136,18 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
                 </td>
             </tr>
             </tbody>
         </table>
+
+
+
     </div>
 </div>
-<script src="/js/list.js"></script>
+
+
+
 
 <!--<div class="row" id="usersGrid">-->
 <!--<div class="col-xs-12">-->

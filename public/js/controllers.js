@@ -2,24 +2,19 @@
  * Created by Hp on 30/12/2016.
  */
 
+
 myapp.controller("mainController", function(contacts, Contacts, $scope,$http) {
-
-
     $scope.contacts = contacts.data;
-    // $rootScope.contacts = contacts.data;
-     var refresh = function() {
-         // $scope.contacts = Contacts.getContacts().data;
-         $http.get("/contacts").
-             then(function(response) {
-             $scope.contacts = response.data;
+    var refresh = function() {
+        $http.get("/contacts").
+        then(function(response) {
+            $scope.contacts = response.data;
 
-             }, function(response) {
-                 alert("Error finding contacts.");
-             });
-     };
-
-    refresh();
-
+        }, function(response) {
+            alert("Error finding contacts.");
+        });
+    };
+    // refresh();
     $scope.saveContact = function(contact) {
         Contacts.createContact(contact);
         refresh();
@@ -38,6 +33,7 @@ myapp.controller("mainController", function(contacts, Contacts, $scope,$http) {
     }
 
 })
+
 myapp.controller("loginWithFacebookController", function($q, $scope, $routeParams,facebookService,Contacts) {
     // $scope.logInMode = false;
     // $scope.logInFormUrl = "";
