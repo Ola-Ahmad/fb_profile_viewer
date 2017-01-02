@@ -12,6 +12,9 @@
         <div class="pull-right">
             <!--<a class="btn btn-default" href="index.html#!/new/contact">New</a>-->
             <a href="" tabindex="1" class="a-icon icon-margin pull-right" data-toggle="modal" data-target="#addUserModal" rel="tooltip" title="Add user"> <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> </a>
+
+            <div class="row">
+                <div class="col-xs-12">
             <div class="modal fade" id="addUserModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
@@ -39,12 +42,14 @@
                     </div>
                 </div>
             </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
 <div class="row">
     <div class="col-xs-12">
-        <table id="UserList" class="table table-responsive table-hover table-bordered" cellspacing="0" width="100%">
+        <table id="UserList" class="table table-hover table-bordered dt-responsive nowrap" cellspacing="0" width="100%">
             <thead>
             <tr>
                 <th>Contact Name</th>
@@ -71,7 +76,7 @@
                 <td>
                     <!--<div class="row" ng-hide="contact._id"></div>-->
 
-                        <button type="button" class="icon-margin pull-right"  ng-click="deleteContact(contact._id)">
+                        <button type="button" class="icon-margin "  ng-click="deleteContact(contact._id)">
                             <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
                         </button>
 
@@ -108,9 +113,11 @@
                     <!--</div>-->
                 </td>
                 <td>
-                        <a href="" tabindex="1" class="a-icon icon-margin pull-right" data-toggle="modal" data-target="#edit{{contact._id}}" rel="tooltip" title="Update Description!">
+                    <a href="" tabindex="1" class="a-icon icon-margin " data-toggle="modal" data-target="#edit{{contact._id}}" rel="tooltip" title="Update Description!">
                             <span class="glyphicon glyphicon-edit" aria-hidden="true"></span> </a>
-                        <div class="modal fade" id="edit{{contact._id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="modal fade" id="edit{{contact._id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
@@ -136,6 +143,9 @@
                                 </div>
                             </div>
                         </div>
+                        </div>
+                    </div>
+
                 </td>
             </tr>
             </tbody>
