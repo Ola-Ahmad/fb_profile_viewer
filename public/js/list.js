@@ -12,10 +12,9 @@ $(document).ready(function() {
 
     // DataTable
     var table = $('#UserList').DataTable({
-        // responsive: true
+        responsive: true
 
     });
-    new $.fn.dataTable.FixedHeader( table );
 
     // Apply the search
     table.columns().every( function () {
