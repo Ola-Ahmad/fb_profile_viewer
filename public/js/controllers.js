@@ -27,6 +27,8 @@ myapp.controller("mainController", function(contacts, Contacts, $scope,$http) {
         console.log(contact);
         Contacts.getContact(contact._id).then(function(doc) {
             Contacts.editContact(contact);
+            // refresh();
+
         }, function(response) {
             alert(response);
         });
